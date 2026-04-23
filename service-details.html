@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Service Details | People Pursuit</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css"/>
+    <link rel="stylesheet" href="assets/css/animate.css"/>
+    <link rel="stylesheet" href="assets/css/lindy-uikit.css"/>
+
+    <style>
+        /* Global Font & Ultra-Tight Reset */
+        body { 
+            padding-top: 0; 
+            font-family: 'Candara', 'Calibri', 'Segoe UI', sans-serif;
+            color: #444;
+            line-height: 1.4; /* Tighter line height */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Candara', 'Calibri', sans-serif;
+            margin-top: 0;
+            margin-bottom: 10px; /* Reduced bottom margin */
+        }
+        
+        .header { 
+            background: #fff; 
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 999;
+            padding: 5px 0; /* Ultra-thin header */
+        }
+
+        .navbar { padding: 0; }
+
+        .service-header { 
+            padding: 15px 0; /* Minimized header padding */
+            background: #fdf2f0; 
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .accent-color { color: #E64525; }
+        
+        .btn-brand { 
+            background-color: #E64525; 
+            color: white; 
+            border-radius: 8px; 
+            border: none; 
+            transition: 0.3s; 
+            font-family: 'Candara', sans-serif;
+            font-weight: bold;
+        }
+        
+        .btn-brand:hover { 
+            background-color: #1E0F94; 
+            transform: translateY(-1px); 
+        }
+
+        /* Compact Feature List */
+        .feature-list li { 
+            margin-bottom: 8px; 
+            font-size: 1rem; 
+            display: flex; 
+            align-items: flex-start; 
+        }
+        
+        .feature-list i { 
+            color: #E64525; 
+            margin-right: 10px; 
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+
+        /* Compact Inquiry Card */
+        .inquiry-card {
+            padding: 25px; /* Reduced internal padding */
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            background: #fff;
+            border: 1px solid #f2f2f2;
+            margin-top: 0; /* Removed top margin */
+        }
+        
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 2px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #777;
+        }
+
+        .nav-btn.home-btn { font-size: 16px; color: #1E0F94; }
+
+        /* Reduced Main Section Spacing */
+        .main-content-section {
+            padding: 20px 0; /* Minimal vertical scrolling */
+        }
+
+        .scroll-top {
+            width: 35px;
+            height: 35px;
+            background: #E64525;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .preloader { background: #fff; }
+        
+        /* Form Tightening */
+        .form-control { margin-bottom: 8px !important; }
+    </style>
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="loader"><div class="spinner"><div class="spinner-container"><div class="spinner-rotator"><div class="spinner-left"><div class="spinner-circle"></div></div><div class="spinner-right"><div class="spinner-circle"></div></div></div></div></div></div>
+    </div>
+
+    <header class="header header-6 navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="brand-container d-flex flex-column">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/img/logo/logo-1.png" alt="Logo" style="max-height: 40px;" />
+                            </a>
+                            <div class="nav-controls">
+                                <a href="#" id="prevBtn" class="nav-btn"><i class="lni lni-chevron-left"></i> Prev</a>
+                                <a href="index.html" class="nav-btn home-btn"><i class="lni lni-home"></i></a>
+                                <a href="#" id="nextBtn" class="nav-btn">Next <i class="lni lni-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent6">
+                            <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+                            <ul id="nav6" class="navbar-nav ms-auto">
+                                <li class="nav-item"><a href="index.html#home">Home</a></li>
+                                <li class="nav-item"><a href="index.html#about">About</a></li>
+                                <li class="nav-item"><a href="index.html#feature">Services</a></li>
+                                <li class="nav-item"><a href="index.html#pricing">Pricing</a></li>
+                                <li class="nav-item"><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="service-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-1 d-none d-md-block text-center">
+                    <i id="service-icon" class="lni accent-color" style="font-size: 45px;"></i>
+                </div>
+                <div class="col-md-11">
+                    <h1 id="service-title" class="display-6 fw-bold text-dark mb-0">...</h1>
+                    <p id="service-subtitle" class="text-muted mb-0" style="font-size: 1.1rem;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <h4 class="mb-2" style="color: #E64525;">Service Overview</h4>
+                    <p id="service-description" class="text-secondary mb-3" style="text-align: justify;"></p>
+                    <h5 class="mb-2" style="color: #1E0F94;">Key Highlights</h5>
+                    <ul id="service-features" class="list-unstyled feature-list"></ul>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="inquiry-card">
+                        <h5 class="mb-1 text-dark">Inquire Now</h5>
+                        <p class="small text-muted mb-3">Quick consultation request.</p>
+                        <form action="#">
+                            <input type="text" class="form-control p-2 shadow-none border-light bg-light" placeholder="Full Name" required>
+                            <input type="email" class="form-control p-2 shadow-none border-light bg-light" placeholder="Work Email" required>
+                            <textarea class="form-control p-2 shadow-none border-light bg-light" rows="2" placeholder="Brief requirements..."></textarea>
+                            <button type="submit" class="btn btn-brand w-100 py-2 mt-1">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer footer-style-4 py-3 border-top mt-4">
+        <div class="container text-center">
+            <p class="mb-0 small">© 2026 People Pursuit. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="scroll-top" id="scrollTop"><i class="lni lni-chevron-up"></i></a>
+
+    <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script>
+        // ... (Keep existing script logic for serviceData, URL params, and UI handlers)
+        const serviceData = {
+            permanent: { title: "Permanent Staffing", subtitle: "Building the Core of Your Team", icon: "lni-users", brandColor: "#E64525", desc: "Finding the right permanent employee is an investment in your company's future. Our permanent hiring service is designed to find professionals who will not only excel in their roles but also enrich your company culture and drive long-term growth. We go beyond the CV to identify candidates with the right skills, ambition, and vision to become invaluable assets to your organization.", features: ["Deep Dive Consultation: Understanding your technical requirements, team dynamics, and company culture.", "Strategic Talent Mapping: Proactively identifying and engaging with top-tier passive and active candidates in the market.", "Rigorous Vetting Process: Conducting multi-level interviews, skill assessments, and thorough reference checks.", "Offer Management & Onboarding Support: Ensuring a smooth transition from candidate to employee, leading to higher retention."] },
+            contract: { title: "Contract Staffing", subtitle: "Agility and Expertise, On Demand", icon: "lni-briefcase", brandColor: "#1E0F94", desc: "In a world of project-based work and fluctuating market demands, agility is key. Our contract hiring solutions provide you with the flexibility to scale your workforce up or down with highly skilled professionals for specific projects, seasonal peaks, or temporary gaps. Get access to specialized expertise precisely when you need it, without the long-term commitment.", features: ["Critical projects with fixed timelines", "Accessing niche or specialized skills not available in-house.", "Managing seasonal workloads or covering for employee leaves.", "Evaluating a candidate's fit before offering a permanent position (temp-to-perm)."] },
+            executive: { title: "Executive Search", subtitle: "Finding Your Visionary Leadership", icon: "lni-target", brandColor: "#E64525", desc: "The right leadership is the single most critical factor for business success. Our Executive Search service is a discreet, confidential, and highly specialized practice dedicated to identifying and attracting C-suite executives, board members, and senior leaders who will shape the future of your organization. We act as trusted advisors, leveraging our high-level network and deep industry insight to find leaders with the vision, experience, and character to drive transformative change.", features: ["Strategic Needs Analysis: A deep partnership with your board and key stakeholders to define the ideal leadership profile.", "Confidential Market Mapping: Discreetly identifying and engaging with the most accomplished leaders in your industry.", "In-Depth Vetting: Rigorous assessment of leadership competencies, track record, and cultural alignment.", "Negotiation & Onboarding: Facilitating a seamless transition to ensure long-term success for both the leader and your organization."] },
+            rpo: { title: "RPO Services", subtitle: "Your End-to-End Talent Engine", icon: "lni-cog", brandColor: "#1E0F94", desc: "Imagine having a world-class recruitment team embedded within your organization, without the overhead. With our Recruitment Process Outsourcing (RPO) solution, we become an extension of your HR function, managing the entire talent acquisition lifecycle. From sourcing and screening to onboarding, we handle everything, allowing you to focus on your core business. This partnership improves hiring quality, reduces costs, and provides scalable, predictable results.", features: ["A Dedicated Team: Experts who live and breathe your company culture and hiring goals.", "Process Optimization: Streamlining your hiring workflow for maximum efficiency.", "Scalability: Effortlessly scale your recruitment efforts up or down based on business demand.", "Advanced Analytics: Detailed reporting on key metrics like time-to-fill, cost-per-hire, and quality of hire."] }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceKey = urlParams.get('service');
+        const keys = Object.keys(serviceData);
+        const currentIndex = keys.indexOf(serviceKey);
+
+        if (currentIndex !== -1) {
+            const data = serviceData[serviceKey];
+            document.title = `${data.title} | People Pursuit`;
+            document.getElementById('service-title').innerText = data.title;
+            document.getElementById('service-subtitle').innerText = data.subtitle;
+            document.getElementById('service-description').innerText = data.desc;
+            document.getElementById('service-title').style.color = data.brandColor;
+            const iconEl = document.getElementById('service-icon');
+            iconEl.className = `lni ${data.icon}`;
+            iconEl.style.color = data.brandColor;
+            const featureList = document.getElementById('service-features');
+            featureList.innerHTML = ''; 
+            data.features.forEach(f => {
+                let li = document.createElement('li');
+                li.innerHTML = `<i class="lni lni-checkmark-circle" style="color: ${data.brandColor};"></i><span>${f}</span>`;
+                featureList.appendChild(li);
+            });
+            document.getElementById('nextBtn').href = `?service=${keys[(currentIndex + 1) % keys.length]}`;
+            document.getElementById('prevBtn').href = `?service=${keys[(currentIndex - 1 + keys.length) % keys.length]}`;
+        } else { window.location.href = 'index.html'; }
+
+        const scrollTop = document.getElementById('scrollTop');
+        window.onscroll = () => scrollTop.style.display = window.pageYOffset > 200 ? "flex" : "none";
+        scrollTop.onclick = (e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); };
+        window.onload = () => { setTimeout(() => { let p = document.querySelector('.preloader'); if(p){p.style.opacity = '0'; setTimeout(() => p.style.display = 'none', 500);}}, 500); if(typeof WOW !== 'undefined') new WOW().init(); }
+    </script>
+</body>
+</html>

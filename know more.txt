@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | Workforce Solutions</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/lineicons.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .service-header {
+            padding: 100px 0 60px;
+            background: #f9f9f9;
+        }
+        .service-icon-big {
+            font-size: 60px;
+            color: #E64525;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .cta-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid #E64525;
+        }
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .feature-list i {
+            color: #E64525;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 30px;
+        }
+        .back-btn:hover { color: #E64525; }
+    </style>
+</head>
+<body>
+
+    <section class="service-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <a href="index.html" class="back-btn"><i class="lni lni-arrow-left"></i> &nbsp; Back to Services</a>
+                    <div class="service-icon-big">
+                        <i class="lni lni-users"></i> </div>
+                    <h1 class="display-4 fw-bold">Permanent Staffing</h1>
+                    <p class="lead mt-3">Building the long-term core of your organization with top-tier talent that fits your culture and vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-details py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <h3>Why Choose Our Permanent Solutions?</h3>
+                    <p>Finding the right person isn't just about matching a resume to a job description; it's about cultural alignment and long-term potential. Our rigorous vetting process ensures you get candidates who are ready to contribute from day one.</p>
+                    
+                    <ul class="list-unstyled feature-list mt-4">
+                        <li><i class="lni lni-checkmark-circle"></i> Comprehensive background & reference checks</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Deep industry-specific talent pools</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Culture-fit assessment interviews</li>
+                        <li><i class="lni lni-checkmark-circle"></i> 90-day placement guarantee</li>
+                    </ul>
+
+                    <div class="mt-5">
+                        <h4>The Process</h4>
+                        <p>We handle everything from initial sourcing and screening to final negotiations, allowing your HR team to focus on strategic initiatives while we build your workforce.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="cta-box">
+                        <h4>Request a Consultation</h4>
+                        <p class="small mb-4">Let’s discuss how we can help you find your next key hire.</p>
+                        <form action="#">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Full Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Work Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Briefly describe your hiring needs..."></textarea>
+                            </div>
+                            <button type="submit" class="btn w-100 py-3" style="background-color: #E64525; color: white; border-radius: 10px;">Get Started</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-center bg-light">
+        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
