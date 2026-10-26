@@ -71,32 +71,34 @@
     
 
     // ===== pricing-style-4 slider
-    tns({
-        container: '.pricing-active',
-        autoplay: false,
-        mouseDrag: true,
-        gutter: 0,
-        nav: false,
-        controls: true,
-        controlsText: [
-          '<i class="lni lni-chevron-left prev"></i>',
-          '<i class="lni lni-chevron-right prev"></i>',
-        ],
-        responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 2,
-          },
-          992: {
-            items: 1.2,
-          },
-          1200: {
-            items: 2,
-          }
-        }
-      });
+    if (document.querySelector('.pricing-active')) {
+        tns({
+            container: '.pricing-active',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: false,
+            controls: true,
+            controlsText: [
+              '<i class="lni lni-chevron-left prev"></i>',
+              '<i class="lni lni-chevron-right prev"></i>',
+            ],
+            responsive: {
+              0: {
+                items: 1,
+              },
+              768: {
+                items: 2,
+              },
+              992: {
+                items: 1.2,
+              },
+              1200: {
+                items: 2,
+              }
+            }
+        });
+    }
 
 	// WOW active
     new WOW().init();
