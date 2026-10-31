@@ -31,6 +31,11 @@ body li {
   color: #1e0f94 !important;
 }
 
+.footer-style-4 .widget-wrapper .footer-widget .quick-links li a,
+.footer-style-4 .widget-wrapper .footer-widget .quick-links li a:hover {
+  color: #e64525 !important;
+}
+
 .hero-section-wrapper-5 .hero-style-5 {
   padding-top: 56px !important;
   padding-bottom: 20px !important;
