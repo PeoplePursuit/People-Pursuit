@@ -26,13 +26,8 @@ body li {
   height: auto;
 }
 
-.footer-style-4 .widget-wrapper .footer-widget .links li:nth-child(odd) > a,
-.footer-style-4 .widget-wrapper .footer-widget .links li:nth-child(odd) > a:hover {
-  color: #e64525 !important;
-}
-
-.footer-style-4 .widget-wrapper .footer-widget .links li:nth-child(even) > a,
-.footer-style-4 .widget-wrapper .footer-widget .links li:nth-child(even) > a:hover {
+.footer-style-4 .widget-wrapper .footer-widget .links li a,
+.footer-style-4 .widget-wrapper .footer-widget .links li a:hover {
   color: #1e0f94 !important;
 }
 
