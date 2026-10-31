@@ -1,3 +1,4 @@
-body :not(.button):not(.button *):not(.btn-brand):not(.btn-brand *):not(.job-apply-button):not(.job-apply-button *) {
+body p:not(.jobs-eyebrow):not(.job-category),
+body li {
   color: #1e0f94 !important;
 }
