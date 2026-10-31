@@ -37,13 +37,22 @@ body li {
 }
 
 .hero-section-wrapper-5 .hero-style-5 {
-  padding-top: 72px !important;
-  padding-bottom: 36px !important;
+  padding-top: 56px !important;
+  padding-bottom: 20px !important;
+}
+
+#home .hero-content-wrapper {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+#home .hero-image {
+  margin-bottom: 20px;
 }
 
 .about-section.about-style-4 {
-  padding-top: 42px !important;
-  padding-bottom: 42px !important;
+  padding-top: 24px !important;
+  padding-bottom: 36px !important;
 }
 
 .feature-section.feature-style-5,
