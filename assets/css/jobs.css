@@ -15,9 +15,10 @@
 }
 
 .jobs-header .navbar-brand img {
-  width: 260px;
+  width: 160px;
   max-width: 100%;
-  max-height: 48px;
+  height: auto;
+  max-height: 72px;
   object-fit: contain;
 }
 
