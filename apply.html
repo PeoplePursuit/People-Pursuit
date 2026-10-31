@@ -18,7 +18,18 @@
         <a class="navbar-brand" href="index.html">
           <img src="assets/img/logo/people-pursuit-mark.png" alt="People Pursuit home" />
         </a>
-        <a class="back-to-jobs" href="jobs.html"><i class="lni lni-arrow-left" aria-hidden="true"></i> All opportunities</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#applyNavigation" aria-controls="applyNavigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="applyNavigation">
+          <div class="application-header-links ms-auto">
+            <a class="back-to-jobs" href="index.html#home">Home</a>
+            <a class="back-to-jobs" href="products.html">Products</a>
+            <a class="back-to-jobs" href="testimonials.html">Testimonial</a>
+            <a class="back-to-jobs" href="jobs.html"><i class="lni lni-arrow-left" aria-hidden="true"></i> All opportunities</a>
+            <a class="back-to-jobs" href="index.html#contact">Contact</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -91,6 +102,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
   <script>
     (function () {
       var role = new URLSearchParams(window.location.search).get("role");

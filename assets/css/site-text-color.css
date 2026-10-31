@@ -2,3 +2,53 @@ body p:not(.jobs-eyebrow):not(.job-category),
 body li {
   color: #1e0f94 !important;
 }
+
+.brand-red,
+.brand-red > i {
+  color: #e64525 !important;
+}
+
+.brand-blue,
+.brand-blue > i {
+  color: #1e0f94 !important;
+}
+
+.brand-wordmark {
+  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.footer-style-4 .widget-wrapper .footer-widget .logo img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-section-wrapper-5 .hero-style-5 {
+  padding-top: 82px !important;
+  padding-bottom: 48px !important;
+}
+
+.about-section.about-style-4 {
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+
+.feature-section.feature-style-5,
+.contact-section.contact-style-3 {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.clients-logo-section.pt-100.pb-100 {
+  padding-top: 44px !important;
+  padding-bottom: 44px !important;
+}
+
+@media (max-width: 575.98px) {
+  .brand-wordmark {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+}
