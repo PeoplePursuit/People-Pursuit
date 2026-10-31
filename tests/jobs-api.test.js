@@ -5,6 +5,8 @@ const jobsApi = require("../api/jobs");
 const originalFetch = global.fetch;
 const originalUrl = process.env.SUPABASE_URL;
 const originalServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const originalResendApiKey = process.env.RESEND_API_KEY;
+const originalJobNotificationFrom = process.env.JOB_NOTIFICATION_FROM;
 
 function createResponse(status, body) {
   return {
@@ -52,6 +54,13 @@ function validPosting(overrides) {
   };
 }
 
+function configurePosting() {
+  process.env.SUPABASE_URL = "https://example.supabase.co";
+  process.env.SUPABASE_SERVICE_ROLE_KEY = "server-only-test-key";
+  process.env.RESEND_API_KEY = "server-only-resend-test-key";
+  process.env.JOB_NOTIFICATION_FROM = "People Pursuit <jobs@example.com>";
+}
+
 afterEach(() => {
   global.fetch = originalFetch;
   if (originalUrl === undefined) {
@@ -63,6 +72,16 @@ afterEach(() => {
     delete process.env.SUPABASE_SERVICE_ROLE_KEY;
   } else {
     process.env.SUPABASE_SERVICE_ROLE_KEY = originalServiceRoleKey;
+  }
+  if (originalResendApiKey === undefined) {
+    delete process.env.RESEND_API_KEY;
+  } else {
+    process.env.RESEND_API_KEY = originalResendApiKey;
+  }
+  if (originalJobNotificationFrom === undefined) {
+    delete process.env.JOB_NOTIFICATION_FROM;
+  } else {
+    process.env.JOB_NOTIFICATION_FROM = originalJobNotificationFrom;
   }
 });
 
@@ -96,14 +115,26 @@ test("rejects a job with invalid required fields before calling Supabase", async
   assert.match(res.body.error, /required job details/i);
 });
 
-test("saves a valid job as pending review", async () => {
-  process.env.SUPABASE_URL = "https://example.supabase.co";
-  process.env.SUPABASE_SERVICE_ROLE_KEY = "server-only-test-key";
-  let inserted;
+test("notifies People Pursuit and publishes a valid job automatically", async () => {
+  configurePosting();
+  const requests = [];
   global.fetch = async (url, options) => {
-    if (options.method === "POST") {
-      inserted = JSON.parse(options.body);
-      return createResponse(201, [inserted]);
+    requests.push({ url, options });
+    if (url === "https://api.resend.com/emails") {
+      const email = JSON.parse(options.body);
+      assert.deepEqual(email.to, ["contactus@peoplepursuit.in"]);
+      assert.match(email.text, /Software Engineer/);
+      assert.match(email.text, /Example Company/);
+      assert.equal(options.headers.Authorization, "Bearer server-only-resend-test-key");
+      return createResponse(200, { id: "email-1" });
+    }
+    if (options && options.method === "POST") {
+      return createResponse(201, [{ id: "job-1", status: "pending_review" }]);
+    }
+    if (options && options.method === "PATCH") {
+      assert.match(url, /id=eq\.job-1/);
+      assert.deepEqual(JSON.parse(options.body), { status: "published" });
+      return createResponse(200, [{ id: "job-1", status: "published" }]);
     }
     return createResponse(200, []);
   };
@@ -112,9 +143,50 @@ test("saves a valid job as pending review", async () => {
   await jobsApi({ method: "POST", body: validPosting({}), headers: {} }, res);
 
   assert.equal(res.statusCode, 201);
-  assert.equal(inserted.status, "pending_review");
-  assert.equal(inserted.application_email, "jobs@example.com");
-  assert.equal(res.body.status, "pending_review");
+  assert.equal(JSON.parse(requests.find(({ options }) => options && options.method === "POST").options.body).status, "pending_review");
+  assert.equal(res.body.status, "published");
+  assert.equal(res.body.message, "Your job is now published on the Find Jobs page.");
+  assert.ok(requests.some(({ options }) => options && options.method === "PATCH"));
+});
+
+test("requires notification configuration before accepting a job", async () => {
+  process.env.SUPABASE_URL = "https://example.supabase.co";
+  process.env.SUPABASE_SERVICE_ROLE_KEY = "server-only-test-key";
+  delete process.env.RESEND_API_KEY;
+  delete process.env.JOB_NOTIFICATION_FROM;
+  global.fetch = async () => {
+    throw new Error("Supabase should not be called without notification configuration");
+  };
+  const res = createMockResponse();
+
+  await jobsApi({ method: "POST", body: validPosting({}), headers: {} }, res);
+
+  assert.equal(res.statusCode, 503);
+  assert.match(res.body.error, /notifications are not configured/i);
+});
+
+test("does not publish a job when the notification email fails", async () => {
+  configurePosting();
+  let published = false;
+  global.fetch = async (url, options) => {
+    if (url === "https://api.resend.com/emails") {
+      return createResponse(500, "Email provider unavailable");
+    }
+    if (options && options.method === "POST") {
+      return createResponse(201, [{ id: "job-2", status: "pending_review" }]);
+    }
+    if (options && options.method === "PATCH") {
+      published = true;
+    }
+    return createResponse(200, []);
+  };
+  const res = createMockResponse();
+
+  await jobsApi({ method: "POST", body: validPosting({}), headers: {} }, res);
+
+  assert.equal(res.statusCode, 502);
+  assert.match(res.body.error, /saved but not published/i);
+  assert.equal(published, false);
 });
 
 test("does not accept public posts when server-side configuration is missing", async () => {
@@ -129,8 +201,7 @@ test("does not accept public posts when server-side configuration is missing", a
 });
 
 test("enforces the daily posting limit for an application email", async () => {
-  process.env.SUPABASE_URL = "https://example.supabase.co";
-  process.env.SUPABASE_SERVICE_ROLE_KEY = "server-only-test-key";
+  configurePosting();
   global.fetch = async (url) => {
     assert.match(url, /application_email=eq\.jobs%40example\.com/);
     return createResponse(200, Array.from({ length: 5 }, (_, index) => ({ id: index })));
@@ -144,8 +215,7 @@ test("enforces the daily posting limit for an application email", async () => {
 });
 
 test("rejects non-web application links", async () => {
-  process.env.SUPABASE_URL = "https://example.supabase.co";
-  process.env.SUPABASE_SERVICE_ROLE_KEY = "server-only-test-key";
+  configurePosting();
   global.fetch = async () => {
     throw new Error("Supabase should not be called for an invalid application link");
   };

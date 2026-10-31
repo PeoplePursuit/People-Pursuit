@@ -9,6 +9,7 @@ const ALLOWED_EMPLOYMENT_TYPES = new Set([
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_BODY_BYTES = 12000;
 const DAILY_POST_LIMIT = 5;
+const JOB_NOTIFICATION_EMAIL = "contactus@peoplepursuit.in";
 
 function sendJson(res, status, value) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -32,6 +33,12 @@ function getSupabaseConfig() {
   } catch {
     return null;
   }
+}
+
+function getEmailConfig() {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.JOB_NOTIFICATION_FROM;
+  return apiKey && from ? { apiKey, from } : null;
 }
 
 function getHeaders(serviceRoleKey, extraHeaders) {
@@ -115,6 +122,44 @@ async function supabaseFetch(config, path, options) {
   });
 }
 
+async function sendJobNotification(emailConfig, job) {
+  const details = [
+    "A job listing was submitted and will be published automatically after notification succeeds.",
+    "",
+    "Company: " + job.company_name,
+    "Job title: " + job.title,
+    "Location: " + job.location,
+    "Employment type: " + job.employment_type,
+    "Salary: " + (job.salary_range || "Not provided"),
+    "Application email: " + job.application_email,
+    "Application link: " + (job.application_url || "Not provided"),
+    "",
+    "Description:",
+    job.description,
+    "",
+    "Requirements:",
+    job.requirements || "Not provided"
+  ].join("\n");
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + emailConfig.apiKey,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      from: emailConfig.from,
+      to: [JOB_NOTIFICATION_EMAIL],
+      subject: "New job listing submitted to People Pursuit",
+      text: details
+    })
+  });
+  if (!response.ok) {
+    console.error("Could not send job notification:", await response.text());
+    return false;
+  }
+  return true;
+}
+
 async function handleGet(config, res) {
   const query = new URLSearchParams({
     select: "id,company_name,title,location,employment_type,salary_range,description,requirements,application_email,application_url,created_at",
@@ -139,6 +184,12 @@ async function handlePost(config, req, res) {
   const validation = validateJob(req.body);
   if (validation.error) {
     return sendJson(res, 400, { error: validation.error });
+  }
+  const emailConfig = getEmailConfig();
+  if (!emailConfig) {
+    return sendJson(res, 503, {
+      error: "Job posting notifications are not configured. Please try again later."
+    });
   }
 
   const rateLimitQuery = new URLSearchParams({
@@ -166,9 +217,50 @@ async function handlePost(config, req, res) {
     return sendJson(res, 502, { error: "We couldn’t submit your job right now. Please try again later." });
   }
 
+  const [insertedJob] = await response.json();
+  if (!insertedJob || !insertedJob.id) {
+    console.error("Supabase did not return the saved job posting ID.");
+    return sendJson(res, 502, { error: "We couldn’t confirm your job submission. Please try again later." });
+  }
+
+  let notificationSent;
+  try {
+    notificationSent = await sendJobNotification(emailConfig, validation.value);
+  } catch (error) {
+    console.error("Could not send job notification:", error);
+    return sendJson(res, 502, {
+      error: "Your job was saved but not published because we couldn’t notify People Pursuit. Please try again later."
+    });
+  }
+  if (!notificationSent) {
+    return sendJson(res, 502, {
+      error: "Your job was saved but not published because we couldn’t notify People Pursuit. Please try again later."
+    });
+  }
+
+  const publishQuery = new URLSearchParams({ id: "eq." + insertedJob.id });
+  const publishResponse = await supabaseFetch(config, "/job_postings?" + publishQuery.toString(), {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json", Prefer: "return=representation" },
+    body: JSON.stringify({ status: "published" })
+  });
+  if (!publishResponse.ok) {
+    console.error("Could not publish the notified job posting:", await publishResponse.text());
+    return sendJson(res, 502, {
+      error: "We received your job and notified People Pursuit, but couldn’t publish it yet. Please contact us."
+    });
+  }
+  const [publishedJob] = await publishResponse.json();
+  if (!publishedJob || publishedJob.status !== "published") {
+    console.error("Supabase did not confirm the job posting was published.");
+    return sendJson(res, 502, {
+      error: "We received your job and notified People Pursuit, but couldn’t confirm publication. Please contact us."
+    });
+  }
+
   return sendJson(res, 201, {
-    status: "pending_review",
-    message: "Your job posting has been submitted for review."
+    status: "published",
+    message: "Your job is now published on the Find Jobs page."
   });
 }
 
