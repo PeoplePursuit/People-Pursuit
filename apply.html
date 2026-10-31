@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Apply for a career opportunity with People Pursuit." />
+  <title>Apply for a Job | People Pursuit</title>
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+  <link rel="stylesheet" href="assets/css/jobs.css" />
+</head>
+<body class="jobs-page">
+  <header class="jobs-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo/logo-1.png" alt="People Pursuit home" />
+        </a>
+        <a class="back-to-jobs" href="jobs.html"><i class="lni lni-arrow-left" aria-hidden="true"></i> All opportunities</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="application-section">
+    <div class="container">
+      <div class="application-card">
+        <p class="jobs-eyebrow">TAKE THE NEXT STEP</p>
+        <h1>Apply for a role</h1>
+        <p class="application-intro">Tell us a little about yourself. Your email app will open with your application details ready to send to our team.</p>
+
+        <form id="job-application-form">
+          <div class="mb-3">
+            <label class="form-label" for="role">Role</label>
+            <select class="form-select" id="role" name="Role" required>
+              <option value="Talent Acquisition Specialist">Talent Acquisition Specialist</option>
+              <option value="Recruiter">Recruiter</option>
+              <option value="Business Development Executive">Business Development Executive</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="full-name">Full name</label>
+              <input class="form-control" id="full-name" name="Full name" autocomplete="name" maxlength="100" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="email">Email address</label>
+              <input class="form-control" id="email" name="Email" type="email" autocomplete="email" maxlength="254" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="phone">Phone number</label>
+              <input class="form-control" id="phone" name="Phone" type="tel" autocomplete="tel" maxlength="30" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="location">Current location</label>
+              <input class="form-control" id="location" name="Current location" autocomplete="address-level2" maxlength="100" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="experience">Relevant experience</label>
+              <select class="form-select" id="experience" name="Relevant experience" required>
+                <option value="" selected disabled>Select experience</option>
+                <option>Entry level</option>
+                <option>1–3 years</option>
+                <option>4–7 years</option>
+                <option>8+ years</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="profile">LinkedIn or portfolio (optional)</label>
+              <input class="form-control" id="profile" name="LinkedIn or portfolio" type="url" maxlength="300" placeholder="https://" />
+            </div>
+            <div class="col-12 mb-3">
+              <label class="form-label" for="message">A short introduction (optional)</label>
+              <textarea class="form-control" id="message" name="Introduction" rows="5" maxlength="1000" placeholder="Tell us why you're interested in this role."></textarea>
+            </div>
+          </div>
+          <p class="cv-reminder"><i class="lni lni-paperclip" aria-hidden="true"></i> Please attach your CV or resume in your email app before sending.</p>
+          <button class="job-apply-button application-submit" type="submit">Continue to email <i class="lni lni-envelope" aria-hidden="true"></i></button>
+        </form>
+
+        <p class="application-help">Your application details are placed in an email addressed to <a href="mailto:contactus@peoplepursuit.in">contactus@peoplepursuit.in</a>. They are not submitted until you send the email.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="jobs-footer">
+    <div class="container">
+      <p>© 2026 People Pursuit. All rights reserved.</p>
+      <a href="jobs.html">Back to opportunities</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var role = new URLSearchParams(window.location.search).get("role");
+      var roleSelect = document.getElementById("role");
+      if (role && Array.from(roleSelect.options).some(function (option) { return option.value === role; })) {
+        roleSelect.value = role;
+      }
+
+      document.getElementById("job-application-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(event.currentTarget);
+        var body = Array.from(formData.entries()).map(function (entry) {
+          return entry[0] + ": " + entry[1];
+        }).join("\n");
+        body += "\n\nPlease attach your CV or resume before sending this email.";
+        var subject = "Job application: " + formData.get("Role");
+        window.location.href = "mailto:contactus@peoplepursuit.in?subject=" +
+          encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      });
+    }());
+  </script>
+</body>
+</html>
