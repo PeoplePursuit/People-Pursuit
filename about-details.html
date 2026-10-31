@@ -228,10 +228,18 @@
         if (currentIndex !== -1) {
             const data = serviceData[serviceKey];
             document.title = `${data.title} | People Pursuit`;
-            document.getElementById('service-title').innerText = data.title;
+            const titleElement = document.getElementById('service-title');
+            const titleWords = data.title.split(' ');
+            titleElement.replaceChildren();
+            titleWords.forEach((word, index) => {
+                if (index > 0) titleElement.appendChild(document.createTextNode(' '));
+                const titleWord = document.createElement('span');
+                titleWord.className = index % 2 === 0 ? 'brand-red' : 'brand-blue';
+                titleWord.textContent = word;
+                titleElement.appendChild(titleWord);
+            });
             document.getElementById('service-subtitle').innerText = data.subtitle;
             document.getElementById('service-description').innerText = data.desc;
-            document.getElementById('service-title').style.color = data.brandColor;
             const iconEl = document.getElementById('service-icon');
             iconEl.className = `lni ${data.icon}`;
             iconEl.style.color = data.brandColor;
