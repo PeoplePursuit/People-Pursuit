@@ -1,0 +1,3 @@
+body :not(.button):not(.button *):not(.btn-brand):not(.btn-brand *):not(.job-apply-button):not(.job-apply-button *) {
+  color: #1e0f94 !important;
+}

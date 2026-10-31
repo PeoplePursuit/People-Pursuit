@@ -40,8 +40,7 @@
 
 .jobs-hero {
   padding: 72px 0 64px;
-  color: #fff;
-  background: linear-gradient(120deg, #1e0f94, #3424b5);
+  background: linear-gradient(120deg, #f3f2ff, #ebeaff);
 }
 
 .jobs-eyebrow,
@@ -53,10 +52,6 @@
   letter-spacing: 0.12em;
 }
 
-.jobs-hero .jobs-eyebrow {
-  color: #ffb9a8;
-}
-
 .jobs-hero h1 {
   max-width: 700px;
   margin-bottom: 12px;
@@ -66,7 +61,6 @@
 
 .jobs-hero p:last-child {
   margin: 0;
-  color: rgba(255, 255, 255, 0.82);
   font-size: 1.1rem;
 }
 
