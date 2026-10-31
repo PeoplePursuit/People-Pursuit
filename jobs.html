@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Explore example career opportunities with People Pursuit and apply online." />
+  <meta name="description" content="Explore open roles and apply for jobs posted by employers on People Pursuit." />
   <title>Find Jobs | People Pursuit</title>
   <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
   <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
@@ -36,7 +36,7 @@
       <div class="container">
         <p class="jobs-eyebrow">YOUR NEXT OPPORTUNITY</p>
         <h1>Find work that moves you forward.</h1>
-        <p>Explore opportunities and apply to the role that fits your experience.</p>
+        <p>Explore opportunities posted by employers and apply directly.</p>
       </div>
     </section>
 
@@ -44,54 +44,18 @@
       <div class="container">
         <div class="jobs-listing-heading">
           <div>
-            <h2>Example openings</h2>
-            <p>These are sample roles. Contact us to confirm current availability.</p>
+            <h2>Current opportunities</h2>
+            <p>New job postings are reviewed before they appear here.</p>
           </div>
-          <span class="jobs-count">3 opportunities</span>
+          <a class="job-apply-button post-job-link" href="post-job.html">Post a job <i class="lni lni-plus" aria-hidden="true"></i></a>
         </div>
 
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <article class="job-card">
-              <span class="job-icon"><i class="lni lni-users" aria-hidden="true"></i></span>
-              <p class="job-category">PEOPLE &amp; TALENT</p>
-              <h3>Talent Acquisition Specialist</h3>
-              <p class="job-description">Build candidate pipelines, partner with hiring teams, and guide candidates through a thoughtful recruitment process.</p>
-              <ul class="job-highlights">
-                <li><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Candidate sourcing and screening</li>
-                <li><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Hiring-team partnership</li>
-              </ul>
-              <a class="job-apply-button" href="apply.html?role=Talent%20Acquisition%20Specialist">Apply for this role <i class="lni lni-arrow-right" aria-hidden="true"></i></a>
-            </article>
-          </div>
-
-          <div class="col-lg-4">
-            <article class="job-card">
-              <span class="job-icon"><i class="lni lni-search" aria-hidden="true"></i></span>
-              <p class="job-category">RECRUITMENT</p>
-              <h3>Recruiter</h3>
-              <p class="job-description">Connect qualified professionals with opportunities through sourcing, interviews, and clear candidate communication.</p>
-              <ul class="job-highlights">
-                <li><i class="lni lni-checkmark-circle" aria-hidden="true"></i> End-to-end candidate coordination</li>
-                <li><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Relationship-focused recruiting</li>
-              </ul>
-              <a class="job-apply-button" href="apply.html?role=Recruiter">Apply for this role <i class="lni lni-arrow-right" aria-hidden="true"></i></a>
-            </article>
-          </div>
-
-          <div class="col-lg-4">
-            <article class="job-card">
-              <span class="job-icon"><i class="lni lni-handshake" aria-hidden="true"></i></span>
-              <p class="job-category">BUSINESS DEVELOPMENT</p>
-              <h3>Business Development Executive</h3>
-              <p class="job-description">Develop client relationships, understand workforce needs, and introduce tailored recruitment solutions.</p>
-              <ul class="job-highlights">
-                <li><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Client outreach and relationship building</li>
-                <li><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Consultative business development</li>
-              </ul>
-              <a class="job-apply-button" href="apply.html?role=Business%20Development%20Executive">Apply for this role <i class="lni lni-arrow-right" aria-hidden="true"></i></a>
-            </article>
-          </div>
+        <p class="jobs-status" id="jobs-status" role="status" aria-live="polite">Loading open positions…</p>
+        <div class="row g-4" id="jobs-list"></div>
+        <div class="jobs-empty" id="jobs-empty" hidden>
+          <i class="lni lni-briefcase" aria-hidden="true"></i>
+          <h3>No open jobs just yet</h3>
+          <p>Check back soon or browse another time.</p>
         </div>
       </div>
     </section>
@@ -104,5 +68,80 @@
     </div>
   </footer>
   <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+  <script>
+    (function () {
+      var jobsList = document.getElementById("jobs-list");
+      var jobsStatus = document.getElementById("jobs-status");
+      var jobsEmpty = document.getElementById("jobs-empty");
+
+      function addText(parent, tagName, className, value) {
+        var element = document.createElement(tagName);
+        element.className = className;
+        element.textContent = value;
+        parent.appendChild(element);
+        return element;
+      }
+
+      function renderJob(job) {
+        var column = document.createElement("div");
+        column.className = "col-lg-4";
+        var card = document.createElement("article");
+        card.className = "job-card";
+        var icon = document.createElement("span");
+        icon.className = "job-icon";
+        var iconGlyph = document.createElement("i");
+        iconGlyph.className = "lni lni-briefcase";
+        iconGlyph.setAttribute("aria-hidden", "true");
+        icon.appendChild(iconGlyph);
+        card.appendChild(icon);
+        addText(card, "p", "job-category", job.employment_type);
+        addText(card, "h3", "", job.title);
+        addText(card, "p", "job-company", job.company_name);
+        addText(card, "p", "job-location", job.location + (job.salary_range ? " · " + job.salary_range : ""));
+        addText(card, "p", "job-description", job.description);
+        if (job.requirements) {
+          addText(card, "p", "job-requirements", "Requirements: " + job.requirements);
+        }
+
+        var applicationLink = document.createElement("a");
+        applicationLink.className = "job-apply-button";
+        applicationLink.textContent = "Apply for this role ";
+        var arrow = document.createElement("i");
+        arrow.className = "lni lni-arrow-right";
+        arrow.setAttribute("aria-hidden", "true");
+        applicationLink.appendChild(arrow);
+        if (job.application_url) {
+          applicationLink.href = job.application_url;
+          applicationLink.target = "_blank";
+          applicationLink.rel = "noopener noreferrer";
+        } else {
+          applicationLink.href = "mailto:" + job.application_email +
+            "?subject=" + encodeURIComponent("Application: " + job.title);
+        }
+        card.appendChild(applicationLink);
+        column.appendChild(card);
+        jobsList.appendChild(column);
+      }
+
+      fetch("/api/jobs")
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Unable to load jobs.");
+          }
+          return response.json();
+        })
+        .then(function (jobs) {
+          jobsStatus.hidden = true;
+          if (!Array.isArray(jobs) || jobs.length === 0) {
+            jobsEmpty.hidden = false;
+            return;
+          }
+          jobs.forEach(renderJob);
+        })
+        .catch(function () {
+          jobsStatus.textContent = "We couldn’t load job openings right now. Please try again later.";
+        });
+    }());
+  </script>
 </body>
 </html>

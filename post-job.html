@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Share a job opening with candidates through People Pursuit." />
+  <title>Post a Job | People Pursuit</title>
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+  <link rel="stylesheet" href="assets/css/jobs.css" />
+</head>
+<body class="jobs-page">
+  <header class="jobs-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo/logo-1.png" alt="People Pursuit home" />
+        </a>
+        <a class="back-to-jobs" href="jobs.html"><i class="lni lni-arrow-left" aria-hidden="true"></i> Browse jobs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="application-section">
+    <div class="container">
+      <div class="application-card">
+        <p class="jobs-eyebrow">CONNECT WITH CANDIDATES</p>
+        <h1>Post a job for free</h1>
+        <p class="application-intro">Share the role details and how candidates can apply. Our team reviews every listing before it appears on the jobs page.</p>
+
+        <form id="job-posting-form">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="company-name">Company name</label>
+              <input class="form-control" id="company-name" name="company_name" maxlength="120" autocomplete="organization" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="job-title">Job title</label>
+              <input class="form-control" id="job-title" name="title" maxlength="120" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="job-location">Location</label>
+              <input class="form-control" id="job-location" name="location" maxlength="120" placeholder="City, region, or remote" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="employment-type">Employment type</label>
+              <select class="form-select" id="employment-type" name="employment_type" required>
+                <option value="" selected disabled>Select employment type</option>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Contract</option>
+                <option>Temporary</option>
+                <option>Internship</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="salary-range">Salary or compensation (optional)</label>
+              <input class="form-control" id="salary-range" name="salary_range" maxlength="100" placeholder="For example, ₹8–10 LPA" />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="application-email">Application email</label>
+              <input class="form-control" id="application-email" name="application_email" type="email" maxlength="254" autocomplete="email" required />
+              <div class="form-text">This email address will be shown to candidates.</div>
+            </div>
+            <div class="col-12 mb-3">
+              <label class="form-label" for="application-url">Application link (optional)</label>
+              <input class="form-control" id="application-url" name="application_url" type="url" maxlength="500" placeholder="https://" />
+            </div>
+            <div class="col-12 mb-3">
+              <label class="form-label" for="job-description">Job description</label>
+              <textarea class="form-control" id="job-description" name="description" rows="6" maxlength="5000" required></textarea>
+            </div>
+            <div class="col-12 mb-3">
+              <label class="form-label" for="job-requirements">Skills and requirements (optional)</label>
+              <textarea class="form-control" id="job-requirements" name="requirements" rows="4" maxlength="3000"></textarea>
+            </div>
+          </div>
+
+          <div class="posting-honeypot" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <p class="posting-consent">By submitting, you confirm that you’re authorized to share this vacancy and agree that the listing and application email will be public if approved.</p>
+          <p class="form-feedback" id="posting-feedback" role="status" aria-live="polite"></p>
+          <button class="job-apply-button application-submit" id="posting-submit" type="submit">Submit for review <i class="lni lni-arrow-right" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="jobs-footer">
+    <div class="container">
+      <p>© 2026 People Pursuit. All rights reserved.</p>
+      <a href="jobs.html">Browse jobs</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("job-posting-form");
+      var feedback = document.getElementById("posting-feedback");
+      var submitButton = document.getElementById("posting-submit");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        feedback.textContent = "";
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting…";
+
+        var job = Object.fromEntries(new FormData(form).entries());
+        fetch("/api/jobs", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(job)
+        })
+          .then(function (response) {
+            return response.json().catch(function () {
+              throw new Error("The server returned an invalid response. Please try again later.");
+            }).then(function (result) {
+              if (!response.ok) {
+                throw new Error(result.error || "We couldn’t submit your job. Please try again.");
+              }
+              return result;
+            });
+          })
+          .then(function () {
+            form.reset();
+            feedback.className = "form-feedback success";
+            feedback.textContent = "Thanks! Your job has been submitted for review. It will appear on the jobs page after approval.";
+          })
+          .catch(function (error) {
+            feedback.className = "form-feedback error";
+            feedback.textContent = error.message;
+          })
+          .finally(function () {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Submit for review <i class="lni lni-arrow-right" aria-hidden="true"></i>';
+          });
+      });
+    }());
+  </script>
+</body>
+</html>
