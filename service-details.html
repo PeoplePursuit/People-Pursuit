@@ -189,11 +189,16 @@
                     <div class="inquiry-card">
                         <h5 class="mb-1 text-dark">Inquire Now</h5>
                         <p class="small text-muted mb-3">Quick consultation request.</p>
-                        <form action="#">
-                            <input type="text" class="form-control p-2 shadow-none border-light bg-light" placeholder="Full Name" required>
-                            <input type="email" class="form-control p-2 shadow-none border-light bg-light" placeholder="Work Email" required>
-                            <textarea class="form-control p-2 shadow-none border-light bg-light" rows="2" placeholder="Brief requirements..."></textarea>
-                            <button type="submit" class="btn btn-brand w-100 py-2 mt-1">Submit Inquiry</button>
+                        <form id="service-inquiry-form">
+                            <input type="text" class="form-control p-2 shadow-none border-light bg-light" name="name" maxlength="120" autocomplete="name" placeholder="Full Name" required>
+                            <input type="email" class="form-control p-2 shadow-none border-light bg-light" name="email" maxlength="254" autocomplete="email" placeholder="Work Email" required>
+                            <textarea class="form-control p-2 shadow-none border-light bg-light" name="requirements" rows="3" maxlength="3000" placeholder="Brief requirements..." required></textarea>
+                            <input type="hidden" id="inquiry-service" name="service">
+                            <div class="posting-honeypot" aria-hidden="true">
+                                <input id="inquiry-website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <p class="form-feedback" id="inquiry-feedback" role="status" aria-live="polite"></p>
+                            <button type="submit" class="btn btn-brand w-100 py-2 mt-1" id="inquiry-submit">Submit Inquiry</button>
                         </form>
                     </div>
                 </div>
@@ -211,6 +216,7 @@
 
     <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/service-inquiry.js"></script>
     <script>
         // ... (Keep existing script logic for serviceData, URL params, and UI handlers)
         const serviceData = {

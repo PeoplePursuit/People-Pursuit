@@ -368,6 +368,57 @@
   color: #b42318;
 }
 
+.thank-you-page {
+  display: grid;
+  min-height: 100vh;
+  padding: 32px 16px;
+  place-items: center;
+  background: linear-gradient(120deg, #f3f2ff, #fff);
+}
+
+.thank-you-card {
+  width: min(100%, 620px);
+  padding: 40px;
+  border: 1px solid #eceef4;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(34, 39, 78, 0.07);
+  text-align: center;
+}
+
+.thank-you-logo {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.thank-you-logo img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+.thank-you-card .job-icon {
+  margin: 0 auto 18px;
+  color: #1e0f94;
+  background: #f0efff;
+}
+
+.thank-you-card h1 {
+  margin-bottom: 12px;
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
+  font-weight: 700;
+}
+
+.thank-you-card p {
+  margin-bottom: 24px;
+  color: #6d7085;
+  line-height: 1.7;
+}
+
+.thank-you-card .job-apply-button {
+  margin-top: 0;
+}
+
 .application-submit:disabled {
   cursor: wait;
   opacity: 0.7;
@@ -402,6 +453,10 @@
 
   .testimonial-notice {
     padding: 24px;
+  }
+
+  .thank-you-card {
+    padding: 28px 22px;
   }
 
   .application-section {
