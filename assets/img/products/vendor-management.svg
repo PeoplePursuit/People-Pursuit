@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" fill="none">
+  <rect width="1200" height="560" rx="28" fill="#F4F3FF"/>
+  <circle cx="1010" cy="90" r="180" fill="#E9E7FF"/>
+  <circle cx="145" cy="500" r="220" fill="#E9E7FF"/>
+  <rect x="78" y="64" width="1044" height="432" rx="24" fill="white" stroke="#E4E5F0" stroke-width="2"/>
+  <path d="M78 88C78 74.745 88.745 64 102 64H1098C1111.25 64 1122 74.745 1122 88V132H78V88Z" fill="#1E0F94"/>
+  <circle cx="116" cy="99" r="7" fill="#FF8E73"/>
+  <circle cx="141" cy="99" r="7" fill="#FFC247"/>
+  <circle cx="166" cy="99" r="7" fill="#7ED7B4"/>
+  <text x="202" y="107" fill="white" font-family="Arial, sans-serif" font-size="21" font-weight="700">VENDOR MANAGEMENT</text>
+  <text x="112" y="179" fill="#323450" font-family="Arial, sans-serif" font-size="21" font-weight="700">Vendor directory</text>
+  <text x="112" y="207" fill="#77798C" font-family="Arial, sans-serif" font-size="15">Manage vendor details and relationship status</text>
+  <rect x="112" y="226" width="620" height="1" fill="#E5E5EF"/>
+  <rect x="112" y="244" width="620" height="56" rx="12" fill="#FAFAFD"/>
+  <circle cx="148" cy="272" r="17" fill="#E4E1FF"/>
+  <path d="M141 279V267L148 263L155 267V279M138 279H158" stroke="#1E0F94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="181" y="269" fill="#323450" font-family="Arial, sans-serif" font-size="16" font-weight="700">Northstar Solutions</text>
+  <text x="181" y="288" fill="#77798C" font-family="Arial, sans-serif" font-size="13">Technology services</text>
+  <rect x="596" y="258" width="112" height="28" rx="14" fill="#EAF8F2"/>
+  <text x="619" y="277" fill="#289B78" font-family="Arial, sans-serif" font-size="13" font-weight="700">APPROVED</text>
+  <rect x="112" y="312" width="620" height="56" rx="12" fill="#FAFAFD"/>
+  <circle cx="148" cy="340" r="17" fill="#FFF0C7"/>
+  <path d="M141 347V335L148 331L155 335V347M138 347H158" stroke="#D18A12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="181" y="337" fill="#323450" font-family="Arial, sans-serif" font-size="16" font-weight="700">Brightpath Consulting</text>
+  <text x="181" y="356" fill="#77798C" font-family="Arial, sans-serif" font-size="13">Professional services</text>
+  <rect x="596" y="326" width="112" height="28" rx="14" fill="#FFF5E1"/>
+  <text x="619" y="345" fill="#B7780A" font-family="Arial, sans-serif" font-size="13" font-weight="700">IN REVIEW</text>
+  <rect x="112" y="380" width="620" height="56" rx="12" fill="#FAFAFD"/>
+  <circle cx="148" cy="408" r="17" fill="#FFE4DC"/>
+  <path d="M141 415V403L148 399L155 403V415M138 415H158" stroke="#E64525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="181" y="405" fill="#323450" font-family="Arial, sans-serif" font-size="16" font-weight="700">Evergreen Logistics</text>
+  <text x="181" y="424" fill="#77798C" font-family="Arial, sans-serif" font-size="13">Logistics partner</text>
+  <rect x="596" y="394" width="112" height="28" rx="14" fill="#EAF8F2"/>
+  <text x="619" y="413" fill="#289B78" font-family="Arial, sans-serif" font-size="13" font-weight="700">APPROVED</text>
+  <rect x="766" y="160" width="321" height="276" rx="16" fill="#FAFAFD" stroke="#ECECF4" stroke-width="2"/>
+  <text x="792" y="199" fill="#323450" font-family="Arial, sans-serif" font-size="19" font-weight="700">Relationship overview</text>
+  <text x="792" y="225" fill="#77798C" font-family="Arial, sans-serif" font-size="14">Vendor activity at a glance</text>
+  <circle cx="925" cy="319" r="70" stroke="#E9E8F4" stroke-width="18"/>
+  <path d="M925 249A70 70 0 0 1 991 342" stroke="#46B89B" stroke-width="18" stroke-linecap="round"/>
+  <path d="M991 342A70 70 0 0 1 873 365" stroke="#FFB23F" stroke-width="18" stroke-linecap="round"/>
+  <path d="M873 365A70 70 0 0 1 925 249" stroke="#1E0F94" stroke-width="18" stroke-linecap="round"/>
+  <text x="900" y="317" fill="#323450" font-family="Arial, sans-serif" font-size="27" font-weight="700">24</text>
+  <text x="884" y="340" fill="#77798C" font-family="Arial, sans-serif" font-size="13">vendors</text>
+  <circle cx="799" cy="410" r="5" fill="#46B89B"/>
+  <text x="812" y="415" fill="#77798C" font-family="Arial, sans-serif" font-size="13">Approved</text>
+  <circle cx="908" cy="410" r="5" fill="#FFB23F"/>
+  <text x="921" y="415" fill="#77798C" font-family="Arial, sans-serif" font-size="13">In review</text>
+  <circle cx="1011" cy="410" r="5" fill="#1E0F94"/>
+  <text x="1024" y="415" fill="#77798C" font-family="Arial, sans-serif" font-size="13">Other</text>
+</svg>
