@@ -153,6 +153,49 @@
   margin-bottom: 28px;
 }
 
+.ats-visuals-section {
+  padding: 0 0 72px;
+}
+
+.ats-visuals-section .section-title {
+  margin-bottom: 28px;
+}
+
+.ats-visuals-section .section-title h2 {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.ats-visuals-section .section-title > p:last-child {
+  margin-bottom: 0;
+  color: #6d7085;
+}
+
+.ats-visual-card {
+  height: 100%;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #eceef4;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(34, 39, 78, 0.05);
+}
+
+.ats-visual-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.ats-visual-card figcaption {
+  padding-top: 12px;
+  color: #323450;
+  font-weight: 600;
+}
+
 .testimonial-notice {
   max-width: 760px;
   margin: 0 auto;
