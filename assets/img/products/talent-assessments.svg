@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" fill="none">
+  <rect width="1200" height="560" rx="28" fill="#F4F3FF"/>
+  <circle cx="1020" cy="90" r="180" fill="#E9E7FF"/>
+  <circle cx="145" cy="500" r="220" fill="#E9E7FF"/>
+  <rect x="78" y="64" width="1044" height="432" rx="24" fill="white" stroke="#E4E5F0" stroke-width="2"/>
+  <path d="M78 88C78 74.745 88.745 64 102 64H1098C1111.25 64 1122 74.745 1122 88V132H78V88Z" fill="#1E0F94"/>
+  <circle cx="116" cy="99" r="7" fill="#FF8E73"/>
+  <circle cx="141" cy="99" r="7" fill="#FFC247"/>
+  <circle cx="166" cy="99" r="7" fill="#7ED7B4"/>
+  <text x="202" y="107" fill="white" font-family="Arial, sans-serif" font-size="21" font-weight="700">TALENT ASSESSMENT</text>
+  <rect x="114" y="169" width="350" height="286" rx="16" fill="#FAFAFD" stroke="#ECECF4" stroke-width="2"/>
+  <circle cx="190" cy="245" r="43" fill="#E7E5FF"/>
+  <circle cx="190" cy="233" r="16" fill="#1E0F94"/>
+  <path d="M160 273C165 250 177 244 190 244C203 244 215 250 220 273" fill="#1E0F94"/>
+  <text x="251" y="220" fill="#323450" font-family="Arial, sans-serif" font-size="20" font-weight="700">Candidate profile</text>
+  <text x="251" y="250" fill="#77798C" font-family="Arial, sans-serif" font-size="16">Assessment in progress</text>
+  <rect x="146" y="312" width="285" height="1" fill="#E5E5EF"/>
+  <text x="146" y="348" fill="#323450" font-family="Arial, sans-serif" font-size="16" font-weight="700">Role fit</text>
+  <rect x="146" y="362" width="245" height="12" rx="6" fill="#E9E8F4"/>
+  <rect x="146" y="362" width="204" height="12" rx="6" fill="#E64525"/>
+  <text x="146" y="414" fill="#323450" font-family="Arial, sans-serif" font-size="16" font-weight="700">Communication</text>
+  <rect x="146" y="428" width="245" height="12" rx="6" fill="#E9E8F4"/>
+  <rect x="146" y="428" width="220" height="12" rx="6" fill="#1E0F94"/>
+  <text x="516" y="199" fill="#323450" font-family="Arial, sans-serif" font-size="22" font-weight="700">Skills overview</text>
+  <text x="516" y="229" fill="#77798C" font-family="Arial, sans-serif" font-size="16">Role-related strengths and capabilities</text>
+  <rect x="516" y="259" width="555" height="56" rx="12" fill="#FAFAFD"/>
+  <circle cx="548" cy="287" r="12" fill="#E64525"/>
+  <path d="M542 287L547 292L555 282" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="576" y="294" fill="#323450" font-family="Arial, sans-serif" font-size="17" font-weight="700">Problem solving</text>
+  <rect x="866" y="279" width="149" height="14" rx="7" fill="#E9E8F4"/>
+  <rect x="866" y="279" width="125" height="14" rx="7" fill="#FFB23F"/>
+  <rect x="516" y="329" width="555" height="56" rx="12" fill="#FAFAFD"/>
+  <circle cx="548" cy="357" r="12" fill="#E64525"/>
+  <path d="M542 357L547 362L555 352" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="576" y="364" fill="#323450" font-family="Arial, sans-serif" font-size="17" font-weight="700">Communication</text>
+  <rect x="866" y="349" width="149" height="14" rx="7" fill="#E9E8F4"/>
+  <rect x="866" y="349" width="136" height="14" rx="7" fill="#46B89B"/>
+  <rect x="516" y="399" width="555" height="56" rx="12" fill="#FAFAFD"/>
+  <circle cx="548" cy="427" r="12" fill="#E64525"/>
+  <path d="M542 427L547 432L555 422" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="576" y="434" fill="#323450" font-family="Arial, sans-serif" font-size="17" font-weight="700">Technical skills</text>
+  <rect x="866" y="419" width="149" height="14" rx="7" fill="#E9E8F4"/>
+  <rect x="866" y="419" width="112" height="14" rx="7" fill="#1E0F94"/>
+</svg>
