@@ -49,6 +49,15 @@
   margin-left: 0;
 }
 
+.application-header-links .browse-jobs-cta {
+  align-self: center;
+  margin: 0;
+  padding: 9px 14px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.88rem;
+}
+
 .jobs-hero {
   padding: 72px 0 64px;
   background: linear-gradient(120deg, #f3f2ff, #ebeaff);
@@ -77,6 +86,48 @@
 
 .jobs-listing-section {
   padding: 56px 0 72px;
+}
+
+.job-samples-section {
+  padding: 0 0 72px;
+}
+
+.job-samples-section .jobs-listing-heading {
+  margin-bottom: 24px;
+}
+
+.sample-job-card {
+  gap: 0;
+}
+
+.sample-job-label {
+  align-self: flex-start;
+  margin-bottom: 18px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #4c528b;
+  background: #eff0fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sample-job-card .job-category {
+  margin-bottom: 8px;
+}
+
+.sample-job-card h3 {
+  min-height: auto;
+}
+
+.job-sample-note {
+  display: block;
+  margin-top: auto;
+  padding-top: 16px;
+  color: #77798b;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 .jobs-listing-heading {
