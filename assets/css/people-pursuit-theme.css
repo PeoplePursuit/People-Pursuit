@@ -656,25 +656,11 @@ body > header.header.header-6 .nav-btn.home-btn {
   box-shadow: 0 8px 26px rgba(31, 41, 68, 0.18), inset 0 0 1px 1px #fff;
 }
 
-.home-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  transform: rotate(-18deg);
-}
-
-.home-mark i {
+.home-brand-tile img {
   display: block;
-  width: 15px;
-  height: 43px;
-  border-radius: 13px;
-  background: #393d63;
-}
-
-.home-mark i:last-child {
-  height: 31px;
-  margin-top: 12px;
-  background: #8289c1;
+  width: 58px;
+  height: 59px;
+  object-fit: contain;
 }
 
 .home-eyebrow,
@@ -1340,14 +1326,9 @@ body > header.header.header-6 .nav-btn.home-btn {
     border-radius: 21px;
   }
 
-  .home-mark i {
-    width: 13px;
-    height: 36px;
-  }
-
-  .home-mark i:last-child {
-    height: 26px;
-    margin-top: 10px;
+  .home-brand-tile img {
+    width: 49px;
+    height: 50px;
   }
 
   .home-hero h1 {
