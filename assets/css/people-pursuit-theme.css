@@ -32,6 +32,167 @@ body:not(.home-page) li {
   color: var(--pp-muted) !important;
 }
 
+.whatsapp-chat-button {
+  position: fixed;
+  z-index: 1050;
+  right: max(22px, env(safe-area-inset-right));
+  bottom: max(92px, calc(env(safe-area-inset-bottom) + 72px));
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: #25d366;
+  box-shadow: 0 5px 18px rgba(20, 70, 43, 0.3);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.whatsapp-chat-button:hover {
+  transform: translateY(-2px);
+  color: #fff;
+  background: #1ebe5d;
+}
+
+.whatsapp-chat-button:focus-visible {
+  outline: 3px solid #176a3a;
+  outline-offset: 3px;
+}
+
+.whatsapp-chat-button svg {
+  display: block;
+  width: 31px;
+  height: 31px;
+  fill: currentColor;
+}
+
+.whatsapp-chat-dialog {
+  width: min(100% - 32px, 480px);
+  max-width: 480px;
+  max-height: min(90vh, 760px);
+  padding: 27px;
+  overflow: auto;
+  border: 1px solid var(--pp-line);
+  border-radius: 16px;
+  color: var(--pp-ink);
+  background: var(--pp-paper);
+  box-shadow: 0 24px 80px rgba(20, 24, 45, 0.3);
+}
+
+.whatsapp-chat-dialog::backdrop {
+  background: rgba(25, 29, 48, 0.58);
+  backdrop-filter: blur(3px);
+}
+
+.whatsapp-dialog-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.whatsapp-dialog-heading p {
+  margin: 0 0 5px;
+  color: #7776ad;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.whatsapp-dialog-heading h2 {
+  margin: 0;
+  color: var(--pp-ink);
+  font: 700 22px/1.3 "Manrope", sans-serif;
+}
+
+.whatsapp-dialog-close {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  place-items: center;
+  border: 1px solid var(--pp-line);
+  border-radius: 50%;
+  color: var(--pp-ink);
+  background: #fff;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.whatsapp-dialog-intro {
+  margin: 14px 0 18px;
+  font-size: 13px;
+}
+
+.whatsapp-chat-form label {
+  display: block;
+  margin: 12px 0 6px;
+  color: var(--pp-ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.whatsapp-chat-form input,
+.whatsapp-chat-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid #d7d9e6;
+  border-radius: 7px;
+  color: var(--pp-ink);
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+}
+
+.whatsapp-chat-form textarea {
+  resize: vertical;
+}
+
+.whatsapp-chat-form input:focus,
+.whatsapp-chat-form textarea:focus {
+  border-color: #747ed0;
+  outline: 0;
+  box-shadow: 0 0 0 3px #6976c826;
+}
+
+.whatsapp-chat-status {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+
+.whatsapp-chat-fallback {
+  color: #087d43;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.whatsapp-chat-submit {
+  display: inline-flex;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: #168d4d;
+  font: 600 14px/1.3 "DM Sans", sans-serif;
+}
+
+.whatsapp-chat-submit:hover {
+  background: #116f3d;
+}
+
+.whatsapp-chat-submit svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1156,6 +1317,26 @@ body > header.header.header-6 .nav-btn.home-btn {
   color: #d5ddff;
 }
 
+.home-contact-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 11px 0 0 16px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home-contact-whatsapp:hover {
+  color: #d5ddff;
+}
+
+.home-contact-whatsapp svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
 .home-contact-card {
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.45);
@@ -1444,6 +1625,21 @@ body > header.header.header-6 .nav-btn.home-btn {
 @media (max-width: 420px) {
   .home-wrap {
     width: min(100% - 32px, 1240px);
+  }
+
+  .whatsapp-chat-button {
+    right: max(15px, env(safe-area-inset-right));
+    bottom: max(82px, calc(env(safe-area-inset-bottom) + 66px));
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-chat-dialog {
+    padding: 21px;
+  }
+
+  .home-contact-whatsapp {
+    margin-left: 0;
   }
 
   .home-service-grid,
