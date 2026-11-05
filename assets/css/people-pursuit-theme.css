@@ -50,6 +50,14 @@ a:hover {
   color: var(--pp-ink) !important;
 }
 
+.product-card h2 .brand-red {
+  color: #23103d !important;
+}
+
+.product-card h2 .brand-blue {
+  color: #8688b8 !important;
+}
+
 h1,
 h2,
 h3,
@@ -859,6 +867,10 @@ body > header.header.header-6 .nav-btn.home-btn {
   font-size: 22px;
 }
 
+.home-service-icon .lni {
+  font-size: 21px;
+}
+
 .home-service-card h3,
 .home-steps h3,
 .home-product-card h3 {
@@ -866,6 +878,14 @@ body > header.header.header-6 .nav-btn.home-btn {
   color: var(--pp-ink);
   font: 700 16px/1.35 "Manrope", sans-serif;
   letter-spacing: -0.02em;
+}
+
+.home-service-card h3 .home-service-title-primary {
+  color: #23103d;
+}
+
+.home-service-card h3 .home-service-title-secondary {
+  color: #8688b8;
 }
 
 .home-service-card p {
