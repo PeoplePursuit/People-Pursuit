@@ -999,6 +999,10 @@ body > header.header.header-6 .nav-btn.home-btn {
   background: #f1f2fa;
 }
 
+.home-products-section[hidden] {
+  display: none !important;
+}
+
 .home-product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
