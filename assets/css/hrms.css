@@ -1,0 +1,834 @@
+.hrms-overview-section,
+.hrms-lifecycle-section,
+.hrms-people-section,
+.hrms-cta-section {
+  padding: 72px 0;
+}
+
+.hrms-overview-section,
+.hrms-people-section {
+  background: #f7f8fc;
+}
+
+.hrms-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.hrms-section-heading h2,
+.hrms-people-layout h2,
+.hrms-cta-section h2 {
+  max-width: 760px;
+  margin: 0 0 10px;
+  color: var(--pp-ink);
+  font: 700 clamp(1.75rem, 3vw, 2.35rem)/1.2 "Manrope", "DM Sans", sans-serif;
+  letter-spacing: -0.045em;
+}
+
+.hrms-section-heading p:not(.jobs-eyebrow),
+.hrms-people-layout > div > p:not(.jobs-eyebrow),
+.hrms-cta-section p:not(.jobs-eyebrow) {
+  max-width: 720px;
+  margin: 0;
+}
+
+.hrms-demo-badge,
+.hrms-workflow-note {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--pp-line);
+  border-radius: 999px;
+  color: #595c75;
+  background: #fff;
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+.hrms-demo-badge > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #58a98d;
+  box-shadow: 0 0 0 3px #58a98d20;
+}
+
+.hrms-product-screen {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid #e2e3ed;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(36, 40, 63, 0.09);
+}
+
+.hrms-product-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hrms-product-screen figcaption {
+  padding: 11px 16px;
+  border-top: 1px solid #ececf3;
+  color: #858697;
+  font-size: 0.67rem;
+}
+
+.hrms-overview-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 14px;
+}
+
+.hrms-overview-cards > article {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #e5e6ef;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.hrms-overview-cards > article > span {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  place-items: center;
+  border-radius: 10px;
+  color: #70699a;
+  background: #f0eef8;
+  font-size: 1rem;
+}
+
+.hrms-overview-cards > article:nth-child(2) > span {
+  color: #498572;
+  background: #eaf5f0;
+}
+
+.hrms-overview-cards > article:nth-child(3) > span {
+  color: #a5753f;
+  background: #fbf3e8;
+}
+
+.hrms-overview-cards strong,
+.hrms-overview-cards small {
+  display: block;
+}
+
+.hrms-overview-cards strong {
+  color: #49465b;
+  font: 700 0.75rem/1.35 "Manrope", sans-serif;
+}
+
+.hrms-overview-cards small {
+  margin-top: 4px;
+  color: #858697;
+  font-size: 0.63rem;
+  line-height: 1.4;
+}
+
+.hrms-lifecycle-section {
+  background:
+    radial-gradient(ellipse at 98% 0, #f0effa 0, transparent 38%),
+    #fff;
+}
+
+.hrms-workflow-note > i {
+  color: #7776ad;
+}
+
+.hrms-lifecycle {
+  padding: 27px 28px 20px;
+  border: 1px solid #e5e6ef;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(36, 40, 63, 0.07);
+}
+
+.hrms-lifecycle-start,
+.hrms-lifecycle-end {
+  display: flex;
+  max-width: 670px;
+  min-height: 78px;
+  align-items: center;
+  gap: 14px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  border: 1px solid #d8d2ee;
+  border-radius: 11px;
+  background: #f7f5fc;
+}
+
+.hrms-lifecycle-start-icon,
+.hrms-lifecycle-end-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 11px;
+  color: #6d6198;
+  background: #fff;
+  font-size: 1.15rem;
+}
+
+.hrms-lifecycle-start > div,
+.hrms-lifecycle-end > div {
+  min-width: 0;
+}
+
+.hrms-lifecycle-start small,
+.hrms-lifecycle-end small,
+.hrms-lifecycle-start strong,
+.hrms-lifecycle-end strong {
+  display: block;
+}
+
+.hrms-lifecycle-start small,
+.hrms-lifecycle-end small {
+  margin-bottom: 4px;
+  color: #88849e;
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hrms-lifecycle-start strong,
+.hrms-lifecycle-end strong {
+  color: #3d3951;
+  font: 700 0.86rem/1.4 "Manrope", sans-serif;
+}
+
+.hrms-entry-pill {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: #655b8a;
+  background: #fff;
+  font-size: 0.59rem;
+  font-weight: 600;
+}
+
+.hrms-lifecycle-connector {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 28px;
+  margin: 0 auto;
+  background: #bfc0ce;
+}
+
+.hrms-lifecycle-connector::after {
+  position: absolute;
+  right: -3px;
+  bottom: 1px;
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  border-right: 1px solid #aeb0bf;
+  border-bottom: 1px solid #aeb0bf;
+  content: "";
+}
+
+.hrms-stage {
+  --stage-border: #d7d1ef;
+  --stage-surface: #f8f6fc;
+  --stage-icon: #6f6595;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 17px;
+  padding: 20px;
+  border: 1px solid var(--stage-border);
+  border-radius: 12px;
+  background: var(--stage-surface);
+}
+
+.stage-operations {
+  --stage-border: #b9dfd2;
+  --stage-surface: #f2f9f6;
+  --stage-icon: #4a8c75;
+}
+
+.stage-development {
+  --stage-border: #d8d0eb;
+  --stage-surface: #f8f6fc;
+  --stage-icon: #76699b;
+}
+
+.stage-payroll {
+  --stage-border: #efd9b7;
+  --stage-surface: #fdf9f2;
+  --stage-icon: #a77a3f;
+}
+
+.stage-offboarding {
+  --stage-border: #edc8bd;
+  --stage-surface: #fdf5f2;
+  --stage-icon: #a96e5c;
+}
+
+.hrms-stage-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hrms-stage-marker > span {
+  color: #9290a3;
+  font: 700 0.64rem/1 "Manrope", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.hrms-stage-marker > i {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--stage-icon);
+  background: #fff;
+  font-size: 1.08rem;
+}
+
+.hrms-stage-content {
+  min-width: 0;
+}
+
+.hrms-stage-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.hrms-stage-heading p {
+  margin: 0 0 4px;
+  color: #9293a2;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hrms-stage-heading h3 {
+  margin: 0;
+  color: #37344b;
+  font: 700 1rem/1.3 "Manrope", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.hrms-stage-count {
+  flex: 0 0 auto;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: #77788b;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 0.56rem;
+}
+
+.hrms-activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hrms-activity {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 12px 11px;
+  border: 1px solid rgba(220, 221, 231, 0.82);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.hrms-activity > span {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--stage-icon);
+  background: var(--stage-surface);
+  font-size: 0.88rem;
+}
+
+.hrms-activity > div {
+  min-width: 0;
+}
+
+.hrms-activity strong,
+.hrms-activity small {
+  display: block;
+}
+
+.hrms-activity strong {
+  color: #464358;
+  font: 700 0.65rem/1.4 "Manrope", sans-serif;
+}
+
+.hrms-activity small {
+  margin-top: 4px;
+  color: #7d7e8e;
+  font-size: 0.59rem;
+  line-height: 1.5;
+}
+
+.hrms-compliance-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 12px 0 0;
+  padding: 9px 11px;
+  border: 1px solid #f0e2c9;
+  border-radius: 7px;
+  color: #827254;
+  background: rgba(255, 255, 255, 0.65);
+  font-size: 0.57rem;
+  line-height: 1.5;
+}
+
+.hrms-compliance-note > i {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: #aa854e;
+}
+
+.hrms-lifecycle-end {
+  border-color: #c8dfc7;
+  background: #f2f8f0;
+}
+
+.hrms-lifecycle-end-icon {
+  color: #568661;
+}
+
+.hrms-lifecycle-end small {
+  color: #69836b;
+}
+
+.hrms-lifecycle-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 19px;
+  padding-top: 21px;
+  color: #77798d;
+  font-size: 0.62rem;
+}
+
+.hrms-lifecycle-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hrms-lifecycle-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.legend-onboarding {
+  border-color: #d7d1ef !important;
+  background: #f8f6fc;
+}
+
+.legend-operations {
+  border-color: #b9dfd2 !important;
+  background: #f2f9f6;
+}
+
+.legend-development {
+  border-color: #d8d0eb !important;
+  background: #f8f6fc;
+}
+
+.legend-payroll {
+  border-color: #efd9b7 !important;
+  background: #fdf9f2;
+}
+
+.legend-offboarding {
+  border-color: #edc8bd !important;
+  background: #fdf5f2;
+}
+
+.hrms-people-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.hrms-people-layout h2 {
+  margin-bottom: 14px;
+}
+
+.hrms-people-layout > div > p:not(.jobs-eyebrow) {
+  margin-bottom: 18px;
+}
+
+.hrms-benefit-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.hrms-benefit-list > span {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #67697d;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.hrms-benefit-list i {
+  flex: 0 0 auto;
+  color: #5d9b7b;
+}
+
+.hrms-contact-link {
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+  padding: 12px 18px;
+}
+
+.hrms-payroll-screen {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e2e3ed;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(36, 40, 63, 0.09);
+}
+
+.hrms-payroll-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ececf3;
+}
+
+.hrms-payroll-header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hrms-payroll-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 10px;
+  color: #a67c44;
+  background: #fbf3e8;
+  font-size: 1rem;
+}
+
+.hrms-payroll-header small,
+.hrms-payroll-header strong {
+  display: block;
+}
+
+.hrms-payroll-header small {
+  margin-bottom: 4px;
+  color: #9293a2;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.hrms-payroll-header strong {
+  color: #37344b;
+  font: 700 0.82rem/1.3 "Manrope", sans-serif;
+}
+
+.hrms-payroll-status {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: #927143;
+  background: #fbf5e9;
+  font-size: 0.56rem;
+  font-weight: 600;
+}
+
+.hrms-payroll-status > i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d19b46;
+}
+
+.hrms-payroll-period {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  color: #858697;
+  font-size: 0.62rem;
+}
+
+.hrms-payroll-period strong {
+  color: #555367;
+  font-size: 0.62rem;
+}
+
+.hrms-payroll-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.hrms-payroll-stat-grid > div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #ececf3;
+  border-radius: 8px;
+  background: #fbfbfd;
+}
+
+.hrms-payroll-stat-grid span,
+.hrms-payroll-stat-grid strong {
+  display: block;
+}
+
+.hrms-payroll-stat-grid span {
+  margin-bottom: 7px;
+  color: #858697;
+  font-size: 0.57rem;
+}
+
+.hrms-payroll-stat-grid strong {
+  color: #48465b;
+  font: 700 0.71rem/1.4 "Manrope", sans-serif;
+}
+
+.hrms-payroll-checklist {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.hrms-payroll-checklist > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #737486;
+  font-size: 0.61rem;
+}
+
+.hrms-payroll-checklist .lni-checkmark-circle {
+  color: #56916d;
+}
+
+.hrms-payroll-checklist .lni-timer {
+  color: #a98043;
+}
+
+.hrms-payroll-screen > p {
+  margin: 13px 0 0;
+  color: #9798a5;
+  font-size: 0.55rem;
+  text-align: right;
+}
+
+.hrms-cta-section {
+  background:
+    radial-gradient(ellipse at 90% 0, #deddf1 0, transparent 40%),
+    #f0f1fa;
+}
+
+.hrms-cta-section > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.hrms-cta-section h2 {
+  max-width: 700px;
+}
+
+.hrms-cta-section p:not(.jobs-eyebrow) {
+  max-width: 700px;
+}
+
+.hrms-cta-section .job-apply-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 12px 18px;
+}
+
+@media (max-width: 991.98px) {
+  .hrms-app-body {
+    grid-template-columns: 155px minmax(0, 1fr);
+  }
+
+  .hrms-activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hrms-activity {
+    min-height: 62px;
+  }
+
+  .hrms-people-layout {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hrms-overview-section,
+  .hrms-lifecycle-section,
+  .hrms-people-section,
+  .hrms-cta-section {
+    padding: 54px 0;
+  }
+
+  .hrms-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .hrms-product-screen {
+    border-radius: 10px;
+  }
+
+  .hrms-overview-cards {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hrms-overview-cards > article {
+    padding: 12px;
+  }
+
+  .hrms-lifecycle {
+    padding: 14px 12px 16px;
+    border-radius: 12px;
+  }
+
+  .hrms-lifecycle-start,
+  .hrms-lifecycle-end {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .hrms-lifecycle-start-icon,
+  .hrms-lifecycle-end-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .hrms-lifecycle-start strong,
+  .hrms-lifecycle-end strong {
+    font-size: 0.73rem;
+  }
+
+  .hrms-entry-pill {
+    display: none;
+  }
+
+  .hrms-stage {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .hrms-stage-marker {
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .hrms-stage-marker > i {
+    width: 33px;
+    height: 33px;
+    font-size: 0.92rem;
+  }
+
+  .hrms-stage-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .hrms-stage-heading h3 {
+    font-size: 0.9rem;
+  }
+
+  .hrms-activity-grid {
+    gap: 7px;
+  }
+
+  .hrms-lifecycle-legend {
+    justify-content: flex-start;
+    gap: 9px 13px;
+    font-size: 0.57rem;
+  }
+
+  .hrms-people-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hrms-payroll-screen {
+    padding: 17px;
+  }
+
+  .hrms-cta-section > .container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hrms-payroll-period {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hrms-payroll-stat-grid > div {
+    padding: 10px;
+  }
+
+  .hrms-payroll-stat-grid strong {
+    font-size: 0.64rem;
+  }
+}
