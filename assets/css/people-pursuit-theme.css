@@ -492,21 +492,41 @@ textarea:focus {
 }
 
 .service-header {
-  padding: 38px 0;
-  border-bottom: 1px solid var(--pp-line);
+  padding: 58px 0;
+  border-bottom: 0;
+  color: #fff;
   background:
-    radial-gradient(ellipse at 5% 0, #e5e9fb 0, transparent 55%),
-    #f3f4fb;
+    radial-gradient(ellipse at 10% 2%, #b9d4f2 0, transparent 45%),
+    radial-gradient(ellipse at 50% -15%, #ece6f8 0, transparent 46%),
+    radial-gradient(ellipse at 100% 8%, #6976f5 0, transparent 53%),
+    linear-gradient(175deg, #abb8db 8%, #697aab 43%, #303759 100%);
 }
 
 .service-header h1 {
-  color: var(--pp-ink) !important;
+  color: #fff !important;
   font: 500 clamp(2rem, 4vw, 3.2rem)/1.15 "Manrope", sans-serif;
   letter-spacing: -0.045em;
 }
 
 .service-header p {
-  color: var(--pp-muted);
+  color: #f4f5ff !important;
+}
+
+.service-header .accent-color {
+  color: #dbe1ff !important;
+}
+
+.service-details-page {
+  color: var(--pp-ink);
+  background: var(--pp-paper);
+  font-family: "DM Sans", sans-serif;
+}
+
+.service-details-page > header.header.header-6 {
+  border-bottom: 1px solid var(--pp-line);
+  background: rgba(251, 251, 254, 0.94);
+  box-shadow: none;
+  backdrop-filter: blur(14px);
 }
 
 .main-content-section {
