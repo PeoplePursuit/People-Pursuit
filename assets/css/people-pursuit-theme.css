@@ -252,16 +252,15 @@ body:not(.home-page) .jobs-hero p:not(.jobs-eyebrow) {
 
 .application-section {
   padding: 64px 0 80px;
-  background:
-    radial-gradient(ellipse at 0 0, #e8e9f9 0, transparent 40%),
-    var(--pp-paper);
+  background: var(--pp-paper);
 }
 
 .application-card {
   background: #fff;
 }
 
-.application-card h1 {
+.application-card h1,
+.application-card h2 {
   font-family: "Manrope", sans-serif;
   letter-spacing: -0.045em;
 }

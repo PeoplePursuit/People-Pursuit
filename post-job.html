@@ -34,70 +34,79 @@
     </div>
   </header>
 
-  <main class="application-section">
-    <div class="container">
-      <div class="application-card">
+  <main>
+    <section class="jobs-hero">
+      <div class="container">
         <p class="jobs-eyebrow">CONNECT WITH CANDIDATES</p>
         <h1>Post a job for free</h1>
-        <p class="application-intro">Share the role details and how candidates can apply. Your job will be published automatically after submission.</p>
-
-        <form id="job-posting-form">
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label" for="company-name">Company name</label>
-              <input class="form-control" id="company-name" name="company_name" maxlength="120" autocomplete="organization" required />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label" for="job-title">Job title</label>
-              <input class="form-control" id="job-title" name="title" maxlength="120" required />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label" for="job-location">Location</label>
-              <input class="form-control" id="job-location" name="location" maxlength="120" placeholder="City, region, or remote" required />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label" for="employment-type">Employment type</label>
-              <select class="form-select" id="employment-type" name="employment_type" required>
-                <option value="" selected disabled>Select employment type</option>
-                <option>Full-time</option>
-                <option>Part-time</option>
-                <option>Contract</option>
-                <option>Temporary</option>
-                <option>Internship</option>
-              </select>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label" for="salary-range">Salary or compensation (optional)</label>
-              <input class="form-control" id="salary-range" name="salary_range" maxlength="100" placeholder="For example, ₹8–10 LPA" />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label" for="application-email">Application email</label>
-              <input class="form-control" id="application-email" name="application_email" type="email" maxlength="254" autocomplete="email" required />
-              <div class="form-text">Use an official business email. It will be shown publicly to candidates; email ownership is not verified.</div>
-            </div>
-            <div class="col-12 mb-3">
-              <label class="form-label" for="application-url">Application link (optional)</label>
-              <input class="form-control" id="application-url" name="application_url" type="url" maxlength="500" placeholder="https://" />
-            </div>
-            <div class="col-12 mb-3">
-              <label class="form-label" for="job-description">Job description</label>
-              <textarea class="form-control" id="job-description" name="description" rows="6" maxlength="5000" required></textarea>
-            </div>
-            <div class="col-12 mb-3">
-              <label class="form-label" for="job-requirements">Skills and requirements (optional)</label>
-              <textarea class="form-control" id="job-requirements" name="requirements" rows="4" maxlength="3000"></textarea>
-            </div>
-          </div>
-
-          <div class="posting-honeypot" aria-hidden="true">
-            <input id="website" name="website" tabindex="-1" autocomplete="off" />
-          </div>
-          <p class="posting-consent">By submitting, you confirm that you’re authorized to share this vacancy and agree that the job details and application email will be published publicly.</p>
-          <p class="form-feedback" id="posting-feedback" role="status" aria-live="polite"></p>
-          <button class="job-apply-button application-submit" id="posting-submit" type="submit">Publish job <i class="lni lni-arrow-right" aria-hidden="true"></i></button>
-        </form>
+        <p>Share the role details and how candidates can apply. Your job will be published automatically after submission.</p>
       </div>
-    </div>
+    </section>
+
+    <section class="application-section">
+      <div class="container">
+        <div class="application-card">
+          <h2>Job details</h2>
+          <p class="application-intro">Add the role and application information candidates need to apply.</p>
+
+          <form id="job-posting-form">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="company-name">Company name</label>
+                <input class="form-control" id="company-name" name="company_name" maxlength="120" autocomplete="organization" required />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="job-title">Job title</label>
+                <input class="form-control" id="job-title" name="title" maxlength="120" required />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="job-location">Location</label>
+                <input class="form-control" id="job-location" name="location" maxlength="120" placeholder="City, region, or remote" required />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="employment-type">Employment type</label>
+                <select class="form-select" id="employment-type" name="employment_type" required>
+                  <option value="" selected disabled>Select employment type</option>
+                  <option>Full-time</option>
+                  <option>Part-time</option>
+                  <option>Contract</option>
+                  <option>Temporary</option>
+                  <option>Internship</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="salary-range">Salary or compensation (optional)</label>
+                <input class="form-control" id="salary-range" name="salary_range" maxlength="100" placeholder="For example, ₹8–10 LPA" />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="application-email">Application email</label>
+                <input class="form-control" id="application-email" name="application_email" type="email" maxlength="254" autocomplete="email" required />
+                <div class="form-text">Use an official business email. It will be shown publicly to candidates; email ownership is not verified.</div>
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label" for="application-url">Application link (optional)</label>
+                <input class="form-control" id="application-url" name="application_url" type="url" maxlength="500" placeholder="https://" />
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label" for="job-description">Job description</label>
+                <textarea class="form-control" id="job-description" name="description" rows="6" maxlength="5000" required></textarea>
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label" for="job-requirements">Skills and requirements (optional)</label>
+                <textarea class="form-control" id="job-requirements" name="requirements" rows="4" maxlength="3000"></textarea>
+              </div>
+            </div>
+
+            <div class="posting-honeypot" aria-hidden="true">
+              <input id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <p class="posting-consent">By submitting, you confirm that you’re authorized to share this vacancy and agree that the job details and application email will be published publicly.</p>
+            <p class="form-feedback" id="posting-feedback" role="status" aria-live="polite"></p>
+            <button class="job-apply-button application-submit" id="posting-submit" type="submit">Publish job <i class="lni lni-arrow-right" aria-hidden="true"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="jobs-footer">

@@ -411,7 +411,7 @@
 }
 
 .application-card {
-  max-width: 780px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px;
   border: 1px solid #eceef4;
@@ -423,6 +423,12 @@
 .application-card h1 {
   margin-bottom: 8px;
   font-size: 2rem;
+  font-weight: 700;
+}
+
+.application-card h2 {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
