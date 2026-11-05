@@ -195,6 +195,11 @@
                         <form id="service-inquiry-form">
                             <input type="text" class="form-control p-2 shadow-none border-light bg-light" name="name" maxlength="120" autocomplete="name" placeholder="Full Name" required>
                             <input type="email" class="form-control p-2 shadow-none border-light bg-light" name="email" maxlength="254" autocomplete="email" placeholder="Work Email" required>
+                            <input type="tel" class="form-control p-2 shadow-none border-light bg-light" name="whatsapp_phone" maxlength="30" autocomplete="tel" placeholder="WhatsApp number (optional, include country code)">
+                            <label class="whatsapp-consent" for="service-whatsapp-consent">
+                                <input id="service-whatsapp-consent" name="whatsapp_consent" type="checkbox">
+                                <span>I agree to receive a WhatsApp confirmation about this inquiry.</span>
+                            </label>
                             <textarea class="form-control p-2 shadow-none border-light bg-light" name="requirements" rows="3" maxlength="3000" placeholder="Brief requirements..." required></textarea>
                             <input type="hidden" id="inquiry-service" name="service">
                             <div class="posting-honeypot" aria-hidden="true">

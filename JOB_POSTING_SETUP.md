@@ -24,3 +24,5 @@ Each submission is first saved as `pending_review` so it cannot appear publicly 
 The application email is displayed publicly so candidates can contact the employer. The form checks email syntax but does not verify mailbox ownership or that an address belongs to a company. The API limits each submitted email to five postings per 24-hour period; without mailbox verification, this limit is not an identity check.
 
 The service inquiry form uses the same Resend API key and verified sender settings. On success, the visitor is redirected to `thank-you.html`; failed email requests show an error on the service page instead.
+
+For WhatsApp confirmations on service inquiries and automatic replies to incoming WhatsApp chats, follow [`WHATSAPP_SETUP.md`](./WHATSAPP_SETUP.md).

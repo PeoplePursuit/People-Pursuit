@@ -6,6 +6,14 @@
   var submitButton = document.getElementById("inquiry-submit");
   var serviceTitle = document.getElementById("service-title");
   var serviceInput = document.getElementById("inquiry-service");
+  var whatsappConsent = form.querySelector('[name="whatsapp_consent"]');
+  var whatsappPhone = form.querySelector('[name="whatsapp_phone"]');
+
+  if (whatsappConsent && whatsappPhone) {
+    whatsappConsent.addEventListener("change", function () {
+      whatsappPhone.required = whatsappConsent.checked;
+    });
+  }
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -31,7 +39,11 @@
           if (!response.ok) {
             throw new Error(result.error || "We couldn’t send your inquiry. Please try again.");
           }
-          window.location.assign("thank-you.html");
+          var destination = new URL("thank-you.html", window.location.href);
+          if (result.whatsappWarning) {
+            destination.searchParams.set("whatsapp", "not-sent");
+          }
+          window.location.assign(destination.href);
         });
       })
       .catch(function (error) {

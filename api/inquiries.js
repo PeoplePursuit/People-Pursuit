@@ -1,6 +1,7 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_BODY_BYTES = 8000;
 const NOTIFICATION_EMAIL = "contactus@peoplepursuit.in";
+const { normalizePhoneNumber, sendInquiryConfirmation } = require("../lib/whatsapp");
 
 function sendJson(res, status, value) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -20,7 +21,8 @@ function validateInquiry(body) {
     name: 120,
     email: 254,
     service: 120,
-    requirements: 3000
+    requirements: 3000,
+    whatsapp_phone: 30
   };
   const values = {};
   for (const [field, maxLength] of Object.entries(fields)) {
@@ -37,6 +39,18 @@ function validateInquiry(body) {
   if (!EMAIL_PATTERN.test(values.email)) {
     return { error: "Enter a valid email address." };
   }
+
+  const whatsappConsent = body.whatsapp_consent === true ||
+    body.whatsapp_consent === "on" ||
+    body.whatsapp_consent === "true";
+  if (whatsappConsent) {
+    const whatsappPhone = normalizePhoneNumber(values.whatsapp_phone);
+    if (!whatsappPhone) {
+      return { error: "Enter a valid WhatsApp number, including its country code." };
+    }
+    values.whatsapp_phone = whatsappPhone;
+  }
+  values.whatsapp_consent = whatsappConsent;
 
   return { value: values };
 }
@@ -105,7 +119,16 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  return sendJson(res, 200, { message: "Your inquiry has been sent." });
+  let whatsappWarning = false;
+  if (inquiry.whatsapp_consent) {
+    const whatsappResult = await sendInquiryConfirmation(inquiry.whatsapp_phone);
+    whatsappWarning = !whatsappResult.ok;
+  }
+
+  return sendJson(res, 200, {
+    message: "Your inquiry has been sent.",
+    whatsappWarning
+  });
 };
 
 module.exports.validateInquiry = validateInquiry;

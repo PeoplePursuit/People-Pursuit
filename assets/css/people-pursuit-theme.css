@@ -133,6 +133,21 @@ body:not(.home-page) li {
   font-weight: 600;
 }
 
+.whatsapp-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0 12px;
+  color: var(--pp-ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.whatsapp-consent input {
+  flex: 0 0 auto;
+  margin: 3px 0 0;
+}
+
 .whatsapp-chat-form input,
 .whatsapp-chat-form textarea {
   display: block;
@@ -1373,7 +1388,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   font-weight: 600;
 }
 
-.home-contact-card input,
+.home-contact-card input:not([type="checkbox"]),
 .home-contact-card textarea {
   display: block;
   width: 100%;
@@ -1389,11 +1404,28 @@ body > header.header.header-6 .nav-btn.home-btn {
   resize: vertical;
 }
 
-.home-contact-card input:focus,
+.home-contact-card input:not([type="checkbox"]):focus,
 .home-contact-card textarea:focus {
   border-color: #747ed0;
   outline: 0;
   box-shadow: 0 0 0 3px #6976c826;
+}
+
+.home-contact-card .whatsapp-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.home-contact-card .whatsapp-consent input {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: auto;
+  margin: 3px 0 0;
+  padding: 0;
 }
 
 .home-contact-card .home-button {

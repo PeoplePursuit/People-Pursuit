@@ -216,6 +216,12 @@
               <input id="contact-name" name="name" type="text" maxlength="120" autocomplete="name" required />
               <label for="contact-email">Work email</label>
               <input id="contact-email" name="email" type="email" maxlength="254" autocomplete="email" required />
+              <label for="contact-whatsapp-phone">WhatsApp number (optional)</label>
+              <input id="contact-whatsapp-phone" name="whatsapp_phone" type="tel" maxlength="30" autocomplete="tel" placeholder="+91 98765 43210" />
+              <label class="whatsapp-consent" for="contact-whatsapp-consent">
+                <input id="contact-whatsapp-consent" name="whatsapp_consent" type="checkbox" />
+                <span>I agree to receive a WhatsApp confirmation about this inquiry.</span>
+              </label>
               <label for="contact-requirements">How can we help?</label>
               <textarea id="contact-requirements" name="requirements" rows="4" maxlength="3000" required></textarea>
               <input type="hidden" name="service" value="General inquiry" />
