@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore a visual vendor management portal demo for supplier onboarding, compliance, approvals, staffing workflows, purchase orders, and invoices." />
+  <title>Vendor Management Portal Demo | People Pursuit</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128" />
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/jobs.css" />
+  <link rel="stylesheet" href="assets/css/people-pursuit-theme.css" />
+  <link rel="stylesheet" href="assets/css/vendor-management.css" />
+</head>
+<body class="jobs-page">
+  <header class="jobs-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <a class="navbar-brand" href="index.html#home">
+          <img src="assets/img/logo/people-pursuit-new.png" alt="People Pursuit home" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vendorNavigation" aria-controls="vendorNavigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="vendorNavigation">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="jobs-hero">
+      <div class="container">
+        <p class="jobs-eyebrow">PRODUCT DEMO / VENDOR MANAGEMENT PORTAL</p>
+        <h1>One connected view of every vendor relationship.</h1>
+        <p>Explore a vendor portal concept for supplier onboarding, risk review, staffing partners, purchase orders, invoices, and renewals.</p>
+      </div>
+    </section>
+
+    <section class="vmp-overview-section" aria-labelledby="vmp-overview-heading">
+      <div class="container">
+        <div class="vmp-section-heading">
+          <div>
+            <p class="jobs-eyebrow">A LOOK INSIDE</p>
+            <h2 id="vmp-overview-heading">The vendor workspace at a glance</h2>
+            <p>A sample view for internal procurement and finance teams to track vendor status, approvals, risk, and active work.</p>
+          </div>
+          <span class="vmp-demo-badge"><span aria-hidden="true"></span> Illustrative product concept</span>
+        </div>
+
+        <figure class="vmp-product-screen">
+          <img src="assets/img/products/vendor-management.svg" alt="Illustrative vendor management dashboard with vendor directory, approval statuses, and relationship overview" />
+          <figcaption>Sample vendor directory and relationship overview · Names and figures are fictional</figcaption>
+        </figure>
+
+        <div class="vmp-metric-grid" aria-label="Illustrative vendor management metrics">
+          <article><span>Active vendors</span><strong>24</strong><small>Across service categories</small><i class="lni lni-briefcase" aria-hidden="true"></i></article>
+          <article><span>Reviews in progress</span><strong>06</strong><small>Approval tasks to review</small><i class="lni lni-timer" aria-hidden="true"></i></article>
+          <article><span>Compliance alerts</span><strong>03</strong><small>Documents nearing expiry</small><i class="lni lni-shield" aria-hidden="true"></i></article>
+          <article><span>Invoices to review</span><strong>08</strong><small>Sample finance queue</small><i class="lni lni-wallet" aria-hidden="true"></i></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vmp-lifecycle-section" aria-labelledby="vmp-lifecycle-heading">
+      <div class="container">
+        <div class="vmp-section-heading">
+          <div>
+            <p class="jobs-eyebrow">END-TO-END VENDOR MANAGEMENT WORKFLOW</p>
+            <h2 id="vmp-lifecycle-heading">Five phases. Clear ownership at each step.</h2>
+            <p>Move supplier relationships from registration to renewal with review points, traceable approvals, and operational handoffs.</p>
+          </div>
+          <span class="vmp-workflow-caption"><i class="lni lni-shuffle" aria-hidden="true"></i> Example supplier lifecycle</span>
+        </div>
+
+        <div class="vmp-lifecycle">
+          <article class="vmp-phase phase-registration" id="supplier-registration">
+            <div class="vmp-phase-marker"><span>01</span><i class="lni lni-user" aria-hidden="true"></i></div>
+            <div class="vmp-phase-body">
+              <div class="vmp-phase-heading"><div><p>START WITH THE SUPPLIER</p><h3>Registration &amp; onboarding</h3></div><span class="vmp-phase-tag">Vendor self-service</span></div>
+              <div class="vmp-phase-details">
+                <p>Procurement or a vendor sends an invitation to a secure external workspace.</p>
+                <ul>
+                  <li>Collect legal entity, tax/VAT, banking, insurance, and category-specific documents.</li>
+                  <li>Support localized fields for applicable certificates, such as MSME or diversity credentials.</li>
+                  <li>Validate required formats and missing fields before the profile is submitted.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <span class="vmp-phase-connector" aria-hidden="true"></span>
+
+          <article class="vmp-phase phase-risk" id="vendor-risk">
+            <div class="vmp-phase-marker"><span>02</span><i class="lni lni-shield" aria-hidden="true"></i></div>
+            <div class="vmp-phase-body">
+              <div class="vmp-phase-heading"><div><p>VERIFY BEFORE ENGAGING</p><h3>Risk &amp; compliance verification</h3></div><span class="vmp-phase-tag">Risk-based checks</span></div>
+              <div class="vmp-phase-details">
+                <p>Route the right level of diligence based on supplier category, spend, and data exposure.</p>
+                <ul>
+                  <li>Coordinate sanctions, debarment, and watchlist screening through configured sources.</li>
+                  <li>Assign low, medium, or high risk tiers with matching financial, security, or safety reviews.</li>
+                  <li>Verify bank ownership through approved verification providers and controlled review steps.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <span class="vmp-phase-connector" aria-hidden="true"></span>
+
+          <article class="vmp-phase phase-approval" id="vendor-approval">
+            <div class="vmp-phase-marker"><span>03</span><i class="lni lni-checkmark-circle" aria-hidden="true"></i></div>
+            <div class="vmp-phase-body">
+              <div class="vmp-phase-heading"><div><p>REVIEW &amp; ESTABLISH THE RECORD</p><h3>Internal approvals &amp; ERP sync</h3></div><span class="vmp-phase-tag">Controlled handoff</span></div>
+              <div class="vmp-phase-details">
+                <p>Send the supplier through the configured internal approval path before activation.</p>
+                <ul>
+                  <li>Route to Legal, Finance, InfoSec, or business owners based on category, risk, and thresholds.</li>
+                  <li>Check for duplicate records and resolve potential matches before creating a supplier profile.</li>
+                  <li>After approval, prepare a verified master record for a configured ERP integration.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <span class="vmp-phase-connector" aria-hidden="true"></span>
+
+          <article class="vmp-phase phase-execution" id="vendor-execution">
+            <div class="vmp-phase-marker"><span>04</span><i class="lni lni-cart" aria-hidden="true"></i></div>
+            <div class="vmp-phase-body">
+              <div class="vmp-phase-heading"><div><p>WORK, DELIVER, RECONCILE</p><h3>Execution, POs &amp; performance</h3></div><span class="vmp-phase-tag">Procure to pay</span></div>
+              <div class="vmp-phase-details">
+                <p>Keep commercial documents and delivery milestones connected to day-to-day supplier work.</p>
+                <ul>
+                  <li>Coordinate purchase orders, acknowledgements, shipment notices, and electronic invoices.</li>
+                  <li>Link invoices to approved POs, timesheets, goods receipts, or service milestones.</li>
+                  <li>Track delivery, invoice accuracy, and service-level indicators in reviewable scorecards.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <span class="vmp-phase-connector" aria-hidden="true"></span>
+
+          <article class="vmp-phase phase-renewal" id="vendor-renewal">
+            <div class="vmp-phase-marker"><span>05</span><i class="lni lni-reload" aria-hidden="true"></i></div>
+            <div class="vmp-phase-body">
+              <div class="vmp-phase-heading"><div><p>MAINTAIN OR CLOSE RESPONSIBLY</p><h3>Offboarding &amp; renewal management</h3></div><span class="vmp-phase-tag">Lifecycle maintenance</span></div>
+              <div class="vmp-phase-details">
+                <p>Keep obligations visible before renewal or relationship closure is due.</p>
+                <ul>
+                  <li>Notify owners ahead of insurance, contract, license, and tax-certificate expirations.</li>
+                  <li>Review performance, outstanding actions, and risk status before renewal decisions.</li>
+                  <li>When a relationship ends, coordinate access removal, liability clearance, and audit retention.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <div class="vmp-lifecycle-legend" aria-label="Vendor lifecycle workflow legend">
+            <span><i class="legend-vmp-onboarding"></i> Registration</span>
+            <span><i class="legend-vmp-risk"></i> Risk &amp; compliance</span>
+            <span><i class="legend-vmp-approval"></i> Approvals</span>
+            <span><i class="legend-vmp-execution"></i> Execution</span>
+            <span><i class="legend-vmp-renewal"></i> Renewal &amp; offboarding</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vmp-portal-section" aria-labelledby="vmp-portal-heading">
+      <div class="container">
+        <div class="vmp-section-heading">
+          <div>
+            <p class="jobs-eyebrow">TWO PORTALS, ONE CONTROLLED WORKFLOW</p>
+            <h2 id="vmp-portal-heading">The right workspace for every relationship.</h2>
+            <p>Role-based views can give internal teams broad oversight while keeping external partner access scoped to their own work.</p>
+          </div>
+        </div>
+        <div class="vmp-portal-grid">
+          <article class="vmp-portal-card portal-admin">
+            <div class="vmp-portal-icon"><i class="lni lni-apartment" aria-hidden="true"></i></div>
+            <p>INTERNAL WORKSPACE</p>
+            <h3>Company admin portal</h3>
+            <span class="vmp-portal-audience">Procurement · HR · Finance · Hiring teams</span>
+            <ul>
+              <li>Vendor directory, onboarding queues, and compliance alerts.</li>
+              <li>Category and rate-card controls with configurable approval routing.</li>
+              <li>Candidate pipelines, placements, purchase orders, and invoice review.</li>
+              <li>Spend, vendor performance, pending tasks, and audit reporting.</li>
+            </ul>
+            <div class="vmp-role-note"><i class="lni lni-lock" aria-hidden="true"></i><span>Access shaped by internal role and approval responsibility.</span></div>
+          </article>
+          <article class="vmp-portal-card portal-vendor">
+            <div class="vmp-portal-icon"><i class="lni lni-briefcase" aria-hidden="true"></i></div>
+            <p>EXTERNAL WORKSPACE</p>
+            <h3>Vendor portal</h3>
+            <span class="vmp-portal-audience">Staffing partners · Suppliers · Agency teams</span>
+            <ul>
+              <li>Maintain the vendor’s own profile, certificates, and renewal dates.</li>
+              <li>Submit candidates only against assigned open requisitions.</li>
+              <li>View the vendor’s own purchase orders and placement status.</li>
+              <li>Submit invoices and track review, payment, and scorecard updates.</li>
+            </ul>
+            <div class="vmp-role-note"><i class="lni lni-shield" aria-hidden="true"></i><span>Partner access restricted to its own permitted records.</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vmp-staffing-section" aria-labelledby="vmp-staffing-heading">
+      <div class="container">
+        <div class="vmp-section-heading">
+          <div>
+            <p class="jobs-eyebrow">STAFFING VENDOR WORKFLOW</p>
+            <h2 id="vmp-staffing-heading">From candidate submission to invoice tracking.</h2>
+            <p>Coordinate candidate, commercial, approval, and billing handoffs between staffing partners and internal teams.</p>
+          </div>
+          <span class="vmp-workflow-caption"><i class="lni lni-shuffle" aria-hidden="true"></i> Example placement lifecycle</span>
+        </div>
+
+        <div class="vmp-staffing-flow" aria-label="Staffing vendor candidate and invoice workflow">
+          <article class="vmp-staffing-step"><span>01</span><i class="lni lni-users" aria-hidden="true"></i><h3>Candidate submission</h3><p>Partner submits a candidate against an assigned requisition.</p></article>
+          <span class="vmp-staffing-arrow" aria-hidden="true"><i class="lni lni-arrow-right"></i></span>
+          <article class="vmp-staffing-step"><span>02</span><i class="lni lni-files" aria-hidden="true"></i><h3>Profile &amp; documents</h3><p>Review resume, skill profile, and required candidate documents.</p></article>
+          <span class="vmp-staffing-arrow" aria-hidden="true"><i class="lni lni-arrow-right"></i></span>
+          <article class="vmp-staffing-step"><span>03</span><i class="lni lni-calculator" aria-hidden="true"></i><h3>Rate &amp; margin review</h3><p>Compare bill and pay rates against approved commercial terms.</p><div class="vmp-margin-formula">Gross margin = (Bill rate − Pay rate) ÷ Bill rate</div></article>
+          <span class="vmp-staffing-arrow" aria-hidden="true"><i class="lni lni-arrow-right"></i></span>
+          <article class="vmp-staffing-step"><span>04</span><i class="lni lni-checkmark-circle" aria-hidden="true"></i><h3>Three-tier approval</h3><p>HR → Hiring manager → Finance review before placement activation.</p></article>
+          <span class="vmp-staffing-arrow" aria-hidden="true"><i class="lni lni-arrow-right"></i></span>
+          <article class="vmp-staffing-step"><span>05</span><i class="lni lni-clipboard" aria-hidden="true"></i><h3>PO &amp; placement</h3><p>Generate the approved PO and record assignment details.</p></article>
+          <span class="vmp-staffing-arrow" aria-hidden="true"><i class="lni lni-arrow-right"></i></span>
+          <article class="vmp-staffing-step"><span>06</span><i class="lni lni-wallet" aria-hidden="true"></i><h3>Timesheet &amp; invoice</h3><p>Connect approved time or milestones to invoice review and payment status.</p></article>
+        </div>
+        <div class="vmp-candidate-stages"><strong>Example candidate pipeline</strong><span>Sourced</span><i></i><span>Shortlisted</span><i></i><span>Interview</span><i></i><span>Offered</span><i></i><span>Joined / closed</span></div>
+      </div>
+    </section>
+
+    <section class="vmp-features-section" aria-labelledby="vmp-features-heading">
+      <div class="container">
+        <div class="vmp-section-heading">
+          <div>
+            <p class="jobs-eyebrow">INTELLIGENCE &amp; COLLABORATION</p>
+            <h2 id="vmp-features-heading">Less chasing. More visibility into what needs attention.</h2>
+            <p>Modern portal concepts can help teams surface exceptions sooner while keeping sensitive changes and decisions under human control.</p>
+          </div>
+        </div>
+        <div class="vmp-feature-grid">
+          <article class="vmp-feature-card">
+            <span class="vmp-feature-icon vmp-violet"><i class="lni lni-files" aria-hidden="true"></i></span>
+            <p>DOCUMENT INTELLIGENCE</p><h3>AI-assisted document review</h3>
+            <p>Extract proposed fields, terms, and expiry dates from uploaded certificates, contracts, or invoices for human verification. Compare invoice lines to PO and receipt data to flag possible mismatches for review.</p>
+            <span class="vmp-feature-footnote">Suggestions require verification against the source document.</span>
+          </article>
+          <article class="vmp-feature-card">
+            <span class="vmp-feature-icon vmp-peach"><i class="lni lni-shield" aria-hidden="true"></i></span>
+            <p>CONTINUOUS RISK</p><h3>Risk signals &amp; review queues</h3>
+            <p>Connect configured risk sources and internal assessments to bring material changes to a reviewer’s attention. Escalate a flagged supplier before further purchasing steps are taken.</p>
+            <span class="vmp-feature-footnote">Source coverage and decisions depend on configured policy and providers.</span>
+          </article>
+          <article class="vmp-feature-card">
+            <span class="vmp-feature-icon vmp-blue"><i class="lni lni-key" aria-hidden="true"></i></span>
+            <p>PAYMENT CHANGE CONTROL</p><h3>Verified bank detail updates</h3>
+            <p>Route sensitive banking changes through authenticated vendor access, independent verification, and designated internal approvals. Keep the change history available for audit.</p>
+            <span class="vmp-feature-footnote">No bank change should rely on email instructions alone.</span>
+          </article>
+          <article class="vmp-feature-card">
+            <span class="vmp-feature-icon vmp-mint"><i class="lni lni-alarm-clock" aria-hidden="true"></i></span>
+            <p>PROACTIVE OPERATIONS</p><h3>Renewal reminders &amp; follow-ups</h3>
+            <p>Schedule configurable reminders for expiring documents and contracts. Draft follow-ups for missing items, delayed shipments, or unresolved actions for an owner to review.</p>
+            <span class="vmp-feature-footnote">Automated messages and escalations follow workspace rules.</span>
+          </article>
+          <article class="vmp-feature-card">
+            <span class="vmp-feature-icon vmp-amber"><i class="lni lni-stats-up" aria-hidden="true"></i></span>
+            <p>SPEND &amp; PERFORMANCE</p><h3>Scorecards and pricing insight</h3>
+            <p>Review delivery, invoice accuracy, SLA measures, placement yield, and spend trends. Optional market benchmarks should use appropriate aggregated data and context.</p>
+            <span class="vmp-feature-footnote">Illustrative metrics are not live vendor performance data.</span>
+          </article>
+          <article class="vmp-feature-card">
+            <span class="vmp-feature-icon vmp-lavender"><i class="lni lni-comments" aria-hidden="true"></i></span>
+            <p>SHARED WORKSPACE</p><h3>Supplier collaboration hub</h3>
+            <p>Keep invoice disputes, delivery exceptions, document requests, and resolution notes in a shared, time-stamped conversation visible to the right participants.</p>
+            <span class="vmp-feature-footnote">Partner views remain scoped to authorized records.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vmp-dashboard-section" aria-labelledby="vmp-dashboard-heading">
+      <div class="container vmp-dashboard-layout">
+        <div>
+          <p class="jobs-eyebrow">DASHBOARDS &amp; REPORTING</p>
+          <h2 id="vmp-dashboard-heading">Useful views for admins, partners, and finance.</h2>
+          <p>Put operational queues and relationship health into context with role-appropriate dashboards and vendor-level reports.</p>
+          <div class="vmp-report-list">
+            <span><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Admin: spend, approvals, risk alerts, and vendor performance.</span>
+            <span><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Vendor: own submissions, POs, invoice status, and expiring documents.</span>
+            <span><i class="lni lni-checkmark-circle" aria-hidden="true"></i> Reports: placement yield, SLA adherence, and financial ledger.</span>
+          </div>
+          <a class="job-apply-button vmp-contact-link" href="index.html#contact">Talk to our team <i class="lni lni-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="vmp-invoice-mock" aria-label="Illustrative vendor invoice status dashboard">
+          <div class="vmp-invoice-header"><div><span class="vmp-invoice-icon"><i class="lni lni-wallet" aria-hidden="true"></i></span><span><small>VENDOR PORTAL</small><strong>Invoices &amp; payments</strong></span></div><span class="vmp-invoice-period">November 2026</span></div>
+          <div class="vmp-invoice-stats">
+            <div><span>Submitted</span><strong>08</strong></div><div><span>In review</span><strong>03</strong></div><div><span>Approved</span><strong>04</strong></div><div><span>Paid</span><strong>12</strong></div>
+          </div>
+          <div class="vmp-invoice-table">
+            <div class="vmp-invoice-row vmp-invoice-table-heading"><span>INVOICE</span><span>PO / PERIOD</span><span>STATUS</span></div>
+            <div class="vmp-invoice-row"><strong>INV-1048</strong><span>PO-2301 · Nov</span><em class="invoice-review">Finance review</em></div>
+            <div class="vmp-invoice-row"><strong>INV-1047</strong><span>PO-2294 · Nov</span><em class="invoice-approved">Approved</em></div>
+            <div class="vmp-invoice-row"><strong>INV-1042</strong><span>PO-2250 · Oct</span><em class="invoice-paid">Paid</em></div>
+          </div>
+          <div class="vmp-invoice-foot"><i class="lni lni-information" aria-hidden="true"></i> Sample invoice statuses · No real payment data</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vmp-cta-section">
+      <div class="container">
+        <div><p class="jobs-eyebrow">A MORE CONNECTED PARTNER ECOSYSTEM</p><h2>Make every vendor handoff easier to follow.</h2><p>Talk with our team about a vendor workflow shaped around your suppliers, staffing partners, and approval policies.</p></div>
+        <a class="job-apply-button" href="index.html#contact">Talk to our team <i class="lni lni-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="jobs-footer">
+    <div class="container">
+      <p>© 2026 People Pursuit. All rights reserved.</p>
+      <a href="products.html">Back to products</a>
+    </div>
+  </footer>
+  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+</body>
+</html>
