@@ -1527,7 +1527,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-contact-card {
-  padding: 26px;
+  padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 13px;
   color: var(--pp-ink);
@@ -1536,18 +1536,19 @@ body > header.header.header-6 .nav-btn.home-btn {
 
 .home-contact-card label {
   display: block;
-  margin: 0 0 7px;
+  margin: 0 0 5px;
   color: var(--pp-ink);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 }
 
 .home-contact-card input:not([type="checkbox"]),
+.home-contact-card select,
 .home-contact-card textarea {
   display: block;
   width: 100%;
-  margin: 0 0 13px;
-  padding: 10px 12px;
+  margin: 0 0 9px;
+  padding: 8px 10px;
   border: 1px solid #d7d9e6;
   border-radius: 7px;
   color: var(--pp-ink);
@@ -1559,6 +1560,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-contact-card input:not([type="checkbox"]):focus,
+.home-contact-card select:focus,
 .home-contact-card textarea:focus {
   border-color: #747ed0;
   outline: 0;
@@ -1569,8 +1571,8 @@ body > header.header.header-6 .nav-btn.home-btn {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  margin: 8px 0 12px;
-  font-size: 13px;
+  margin: 6px 0 9px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -1580,6 +1582,21 @@ body > header.header.header-6 .nav-btn.home-btn {
   width: auto;
   margin: 3px 0 0;
   padding: 0;
+}
+
+.home-contact-card label span {
+  color: var(--pp-muted);
+  font-weight: 400;
+}
+
+.home-contact-card .meeting-consent {
+  margin-top: 12px;
+}
+
+.home-contact-card .meeting-help {
+  margin: -7px 0 12px;
+  color: var(--pp-muted);
+  font-size: 11px;
 }
 
 .home-contact-card .home-button {
@@ -1615,6 +1632,30 @@ body > header.header.header-6 .nav-btn.home-btn {
 .home-footer-main > div:first-child > p {
   margin: 6px 0 0;
   font-size: 12px;
+}
+
+.home-footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.home-footer-social a,
+.home-footer-social-coming {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pp-muted);
+  font-size: 12px;
+}
+
+.home-footer-social a {
+  text-decoration: none;
+}
+
+.home-footer-social i {
+  font-size: 18px;
 }
 
 .home-footer-links {

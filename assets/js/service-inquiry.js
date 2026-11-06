@@ -7,11 +7,14 @@
   var serviceTitle = document.getElementById("service-title");
   var serviceInput = document.getElementById("inquiry-service");
   var whatsappConsent = form.querySelector('[name="whatsapp_consent"]');
-  var whatsappPhone = form.querySelector('[name="whatsapp_phone"]');
+  var meetingRequested = form.querySelector('[name="meeting_requested"]');
+  var meetingPreference = form.querySelector('[name="preferred_meeting_time"]');
+  var meetingPreferenceField = document.getElementById("meeting-preference-field");
 
-  if (whatsappConsent && whatsappPhone) {
-    whatsappConsent.addEventListener("change", function () {
-      whatsappPhone.required = whatsappConsent.checked;
+  if (meetingRequested && meetingPreference && meetingPreferenceField) {
+    meetingRequested.addEventListener("change", function () {
+      meetingPreferenceField.hidden = !meetingRequested.checked;
+      meetingPreference.required = meetingRequested.checked;
     });
   }
 
@@ -42,6 +45,9 @@
           var destination = new URL("thank-you.html", window.location.href);
           if (result.whatsappWarning) {
             destination.searchParams.set("whatsapp", "not-sent");
+          }
+          if (meetingRequested && meetingRequested.checked) {
+            destination.searchParams.set("meeting", "requested");
           }
           window.location.assign(destination.href);
         });

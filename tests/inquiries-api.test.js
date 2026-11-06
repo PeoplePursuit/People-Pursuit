@@ -36,6 +36,7 @@ function validInquiry(overrides) {
   return {
     name: "Alex Candidate",
     email: "alex@example.com",
+    mobile: "+1 415 555 0136",
     service: "Permanent Staffing",
     requirements: "We need help hiring a senior engineer.",
     website: "",
@@ -64,6 +65,7 @@ test("sends a service inquiry to People Pursuit and sets the submitter as reply-
     const email = JSON.parse(options.body);
     assert.deepEqual(email.to, ["contactus@peoplepursuit.in"]);
     assert.equal(email.reply_to, "alex@example.com");
+    assert.match(email.text, /Mobile: \+1 415 555 0136/);
     assert.match(email.text, /Permanent Staffing/);
     assert.match(email.text, /senior engineer/);
     return createResponse(200, { id: "email-1" });
@@ -74,6 +76,36 @@ test("sends a service inquiry to People Pursuit and sets the submitter as reply-
 
   assert.equal(res.statusCode, 200);
   assert.equal(res.body.message, "Your inquiry has been sent.");
+});
+
+test("emails meeting requests and preferred availability to People Pursuit", async () => {
+  configureEmail();
+  global.fetch = async (url, options) => {
+    const email = JSON.parse(options.body);
+    assert.match(email.text, /Meeting requested: Yes/);
+    assert.match(email.text, /Preferred meeting time: Tue, 2-4 PM IST/);
+    return createResponse(200, { id: "email-meeting" });
+  };
+  const res = createMockResponse();
+
+  await inquiriesApi({
+    method: "POST",
+    body: validInquiry({
+      meeting_requested: "on",
+      preferred_meeting_time: "Tue, 2-4 PM IST"
+    }),
+    headers: {}
+  }, res);
+
+  assert.equal(res.statusCode, 200);
+});
+
+test("requires preferred availability when a meeting is requested", async () => {
+  const validation = inquiriesApi.validateInquiry(validInquiry({
+    meeting_requested: "on"
+  }));
+
+  assert.match(validation.error, /preferred meeting time/i);
 });
 
 test("rejects invalid inquiry fields before sending email", async () => {

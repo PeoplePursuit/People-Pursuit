@@ -51,14 +51,19 @@
       </a>
       <span class="job-icon"><i class="lni lni-checkmark-circle" aria-hidden="true"></i></span>
       <h1 id="thank-you-title">Thank you for reaching out!</h1>
-      <p>Your inquiry has been sent to our team. We’ll review your requirements and get back to you soon.</p>
+      <p id="thank-you-response">Your inquiry has been sent to our team. We’ll review your request and get back to you soon.</p>
       <p id="whatsapp-notice" hidden>We received your inquiry, but couldn’t send the WhatsApp confirmation. Our team will still follow up using your contact details.</p>
       <a class="job-apply-button" href="index.html#home">Back to home <i class="lni lni-arrow-right" aria-hidden="true"></i></a>
     </section>
   </main>
   <script>
-    if (new URLSearchParams(window.location.search).get("whatsapp") === "not-sent") {
+    var query = new URLSearchParams(window.location.search);
+    if (query.get("whatsapp") === "not-sent") {
       document.getElementById("whatsapp-notice").hidden = false;
+    }
+    if (query.get("meeting") === "requested") {
+      document.getElementById("thank-you-response").textContent =
+        "Your inquiry and meeting request have been sent. Our team will contact you to confirm a suitable time.";
     }
   </script>
   <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>

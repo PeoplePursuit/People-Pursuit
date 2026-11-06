@@ -229,17 +229,42 @@
             <form id="service-inquiry-form">
               <label for="contact-name">Your name</label>
               <input id="contact-name" name="name" type="text" maxlength="120" autocomplete="name" required />
+              <label for="contact-mobile">Mobile number</label>
+              <input id="contact-mobile" name="mobile" type="tel" maxlength="30" autocomplete="tel" placeholder="+91 98765 43210" required />
               <label for="contact-email">Work email</label>
               <input id="contact-email" name="email" type="email" maxlength="254" autocomplete="email" required />
-              <label for="contact-whatsapp-phone">WhatsApp number (optional)</label>
-              <input id="contact-whatsapp-phone" name="whatsapp_phone" type="tel" maxlength="30" autocomplete="tel" placeholder="+91 98765 43210" />
               <label class="whatsapp-consent" for="contact-whatsapp-consent">
                 <input id="contact-whatsapp-consent" name="whatsapp_consent" type="checkbox" />
                 <span>I agree to receive a WhatsApp confirmation about this inquiry.</span>
               </label>
-              <label for="contact-requirements">How can we help?</label>
-              <textarea id="contact-requirements" name="requirements" rows="4" maxlength="3000" required></textarea>
-              <input type="hidden" name="service" value="General inquiry" />
+              <label for="contact-service">What are you looking for?</label>
+              <select id="contact-service" name="service" required>
+                <option value="" selected disabled>Select a service or product</option>
+                <optgroup label="Services">
+                  <option value="Permanent Staffing">Permanent Staffing</option>
+                  <option value="Contract Staffing">Contract Staffing</option>
+                  <option value="Executive Search">Executive Search</option>
+                  <option value="RPO Services">RPO Services</option>
+                </optgroup>
+                <optgroup label="Products">
+                  <option value="Applicant Tracking System (ATS)">Applicant Tracking System (ATS)</option>
+                  <option value="Talent Assessments">Talent Assessments</option>
+                  <option value="HRMS">HRMS</option>
+                  <option value="Vendor Management System">Vendor Management System</option>
+                </optgroup>
+                <option value="Other / Not sure yet">Other / Not sure yet</option>
+              </select>
+              <label for="contact-requirements">Anything else you’d like us to know? <span>(optional)</span></label>
+              <textarea id="contact-requirements" name="requirements" rows="3" maxlength="3000"></textarea>
+              <label class="whatsapp-consent meeting-consent" for="contact-meeting-requested">
+                <input id="contact-meeting-requested" name="meeting_requested" type="checkbox" />
+                <span>I’d like to schedule a meeting.</span>
+              </label>
+              <div id="meeting-preference-field" hidden>
+                <label for="contact-meeting-preference">When would you prefer to meet? <span>(include your time zone)</span></label>
+                <input id="contact-meeting-preference" name="preferred_meeting_time" type="text" maxlength="180" placeholder="e.g. Tue or Wed, 2–4 PM IST" />
+                <p class="meeting-help">Our team will contact you to confirm a suitable time.</p>
+              </div>
               <div class="posting-honeypot" aria-hidden="true">
                 <input id="contact-website" name="website" tabindex="-1" autocomplete="off" />
               </div>
@@ -259,6 +284,24 @@
               <img src="assets/img/logo/people-pursuit-new.png" alt="People Pursuit" loading="lazy" />
             </a>
             <p>People-first thinking. Business-focused solutions.</p>
+            <div class="home-footer-social" aria-label="Social media">
+              <a href="https://www.linkedin.com/company/people-pursuit/" target="_blank" rel="noopener noreferrer" aria-label="People Pursuit on LinkedIn">
+                <i class="lni lni-linkedin-original" aria-hidden="true"></i>
+                <span>LinkedIn</span>
+              </a>
+              <span class="home-footer-social-coming" aria-label="Facebook, coming soon" title="Facebook page coming soon">
+                <i class="lni lni-facebook-filled" aria-hidden="true"></i>
+                <span>Facebook</span>
+              </span>
+              <span class="home-footer-social-coming" aria-label="Instagram, coming soon" title="Instagram page coming soon">
+                <i class="lni lni-instagram-original" aria-hidden="true"></i>
+                <span>Instagram</span>
+              </span>
+              <span class="home-footer-social-coming" aria-label="Blog, coming soon" title="Blog coming soon">
+                <i class="lni lni-website" aria-hidden="true"></i>
+                <span>Blog</span>
+              </span>
+            </div>
           </div>
           <div class="home-footer-links">
             <div><strong>Explore</strong><a href="index.html#about">About us</a><a href="index.html#feature">Services</a><a href="index.html#approach">Our approach</a><a href="index.html#products">Products</a><a href="jobs.html">Careers</a></div>

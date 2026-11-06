@@ -22,6 +22,7 @@ function validateInquiry(body) {
     email: 254,
     service: 120,
     requirements: 3000,
+    mobile: 30,
     whatsapp_phone: 30
   };
   const values = {};
@@ -33,24 +34,42 @@ function validateInquiry(body) {
     values[field] = value.trim();
   }
 
-  if (!values.name || !values.email || !values.requirements) {
-    return { error: "Please complete your name, work email, and requirements." };
+  if (!values.name || !values.email || !values.service) {
+    return { error: "Please complete your name, work email, and select a service or product." };
   }
   if (!EMAIL_PATTERN.test(values.email)) {
     return { error: "Enter a valid email address." };
+  }
+
+  if (Object.prototype.hasOwnProperty.call(body, "mobile") &&
+      (!values.mobile || !/^[+\d\s().-]{7,30}$/.test(values.mobile) || values.mobile.replace(/\D/g, "").length < 7)) {
+    return { error: "Enter a valid mobile number." };
   }
 
   const whatsappConsent = body.whatsapp_consent === true ||
     body.whatsapp_consent === "on" ||
     body.whatsapp_consent === "true";
   if (whatsappConsent) {
-    const whatsappPhone = normalizePhoneNumber(values.whatsapp_phone);
+    const whatsappPhone = normalizePhoneNumber(values.whatsapp_phone || values.mobile);
     if (!whatsappPhone) {
       return { error: "Enter a valid WhatsApp number, including its country code." };
     }
     values.whatsapp_phone = whatsappPhone;
   }
   values.whatsapp_consent = whatsappConsent;
+
+  const meetingRequested = body.meeting_requested === true ||
+    body.meeting_requested === "on" ||
+    body.meeting_requested === "true";
+  const preferredMeetingTime = body.preferred_meeting_time == null ? "" : body.preferred_meeting_time;
+  if (typeof preferredMeetingTime !== "string" || preferredMeetingTime.length > 180) {
+    return { error: "Please check your preferred meeting time and try again." };
+  }
+  values.preferred_meeting_time = preferredMeetingTime.trim();
+  if (meetingRequested && !values.preferred_meeting_time) {
+    return { error: "Please share your preferred meeting time." };
+  }
+  values.meeting_requested = meetingRequested;
 
   return { value: values };
 }
@@ -84,11 +103,14 @@ module.exports = async function handler(req, res) {
     "A new service inquiry was submitted through the People Pursuit website.",
     "",
     "Name: " + inquiry.name,
+    "Mobile: " + (inquiry.mobile || inquiry.whatsapp_phone || "Not provided"),
     "Work email: " + inquiry.email,
-    "Service: " + (inquiry.service || "Not specified"),
+    "Service or product: " + inquiry.service,
+    "Meeting requested: " + (inquiry.meeting_requested ? "Yes" : "No"),
+    inquiry.meeting_requested ? "Preferred meeting time: " + inquiry.preferred_meeting_time : "",
     "",
-    "Requirements:",
-    inquiry.requirements
+    "Additional details:",
+    inquiry.requirements || "None provided"
   ].join("\n");
 
   try {
