@@ -180,7 +180,7 @@
                 </div>
                 <div class="col-md-11">
                     <h1 id="service-title" class="display-6 fw-bold text-dark mb-0">...</h1>
-                    <p id="service-subtitle" class="brand-blue mb-0" style="font-size: 1.1rem;"></p>
+                    <p id="service-subtitle" class="service-subtitle mb-0" style="font-size: 1.1rem;"></p>
                 </div>
             </div>
         </div>
@@ -262,8 +262,6 @@
                 titleElement.appendChild(titleWord);
             });
             const subtitleElement = document.getElementById('service-subtitle');
-            subtitleElement.classList.toggle('brand-red', serviceKey === 'executive');
-            subtitleElement.classList.toggle('brand-blue', serviceKey !== 'executive');
             subtitleElement.innerText = data.subtitle;
             document.getElementById('service-description').innerText = data.desc;
             const iconEl = document.getElementById('service-icon');
