@@ -286,6 +286,46 @@ body > header.header .navbar-brand img {
   object-fit: contain;
 }
 
+.jobs-header .product-page-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.jobs-header .product-page-brand .navbar-brand {
+  margin-right: 0;
+}
+
+.jobs-header .product-page-controls {
+  display: flex;
+  width: 190px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.jobs-header .product-page-controls .nav-btn {
+  padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: var(--pp-muted);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.jobs-header .product-page-controls .nav-btn:hover,
+.jobs-header .product-page-controls .nav-btn:focus-visible {
+  border-color: var(--pp-accent);
+  color: var(--pp-accent);
+}
+
+.jobs-header .product-page-controls .home-btn {
+  color: var(--pp-accent);
+}
+
 .jobs-header .nav-link,
 .jobs-header .nav-link.active,
 .jobs-header .nav-link:hover,
@@ -713,6 +753,10 @@ body > header.header.header-6 .nav-btn.home-btn {
   .jobs-header .navbar-brand img,
   body > header.header .navbar-brand img,
   body > header.header.header-6 .navbar-brand img {
+    width: 158px;
+  }
+
+  .jobs-header .product-page-controls {
     width: 158px;
   }
 

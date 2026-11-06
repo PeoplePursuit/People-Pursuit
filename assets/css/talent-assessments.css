@@ -1394,3 +1394,66 @@
     padding: 6px;
   }
 }
+
+.assessment-demo-section,
+.assessment-workflow-section,
+.assessment-capabilities-section,
+.assessment-report-section,
+.assessment-cta-section {
+  padding: 48px 0;
+}
+
+.jobs-hero {
+  padding: 48px 0 42px;
+}
+
+.assessment-section-heading {
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.assessment-section-heading h2,
+.assessment-report-copy h2,
+.assessment-cta-section h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.assessment-app-body {
+  min-height: 430px;
+}
+
+.assessment-workspace {
+  padding: 20px;
+}
+
+.assessment-flow-step {
+  padding: 18px;
+}
+
+.assessment-report-layout {
+  gap: 36px;
+}
+
+@media (max-width: 767.98px) {
+  .jobs-hero,
+  .assessment-demo-section,
+  .assessment-workflow-section,
+  .assessment-capabilities-section,
+  .assessment-report-section,
+  .assessment-cta-section {
+    padding: 34px 0;
+  }
+
+  .assessment-section-heading {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .assessment-workspace {
+    padding: 15px 11px;
+  }
+
+  .assessment-flow-step {
+    padding: 13px;
+  }
+}

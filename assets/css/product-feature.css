@@ -1001,3 +1001,61 @@
     gap: 6px;
   }
 }
+
+.ats-demo-section,
+.ats-workflow-section,
+.ats-reporting-section {
+  padding: 48px 0;
+}
+
+.jobs-hero {
+  padding: 48px 0 42px;
+}
+
+.ats-section-heading {
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.ats-section-heading h2,
+.ats-reporting-layout h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.ats-dashboard {
+  min-height: 460px;
+}
+
+.ats-dashboard-main {
+  padding: 22px;
+}
+
+.ats-workflow-stage {
+  padding: 17px 0;
+}
+
+.ats-reporting-layout {
+  gap: 36px;
+}
+
+@media (max-width: 767.98px) {
+  .jobs-hero,
+  .ats-demo-section,
+  .ats-workflow-section,
+  .ats-reporting-section {
+    padding: 34px 0;
+  }
+
+  .ats-section-heading {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .ats-dashboard-main {
+    padding: 16px 12px;
+  }
+
+  .ats-workflow-stage {
+    padding: 14px 0;
+  }
+}
