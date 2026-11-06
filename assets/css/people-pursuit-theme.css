@@ -781,6 +781,48 @@ body > header.header.header-6 .nav-btn.home-btn {
   color: #717cc4;
 }
 
+.careers-dropdown {
+  position: relative;
+}
+
+.careers-dropdown > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.careers-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.desktop-nav .careers-menu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 12px);
+  left: -12px;
+  display: grid;
+  min-width: 150px;
+  gap: 2px;
+  padding: 8px;
+  border: 1px solid var(--pp-line);
+  border-radius: 12px;
+  background: var(--pp-paper);
+  box-shadow: 0 12px 30px rgba(36, 40, 63, 0.12);
+}
+
+.desktop-nav .careers-menu a {
+  padding: 10px 12px;
+  border-radius: 7px;
+  color: var(--pp-ink);
+  text-decoration: none;
+}
+
+.desktop-nav .careers-menu a:hover {
+  background: var(--pp-panel);
+}
+
 .desktop-nav .home-nav-cta {
   display: inline-flex;
   align-items: center;
@@ -840,6 +882,19 @@ body > header.header.header-6 .nav-btn.home-btn {
 
 .mobile-nav nav a:hover {
   background: var(--pp-panel);
+}
+
+.mobile-nav .careers-dropdown > summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 7px;
+}
+
+.mobile-nav .careers-menu {
+  display: grid;
+  gap: 2px;
+  padding-left: 10px;
 }
 
 .home-hero {
