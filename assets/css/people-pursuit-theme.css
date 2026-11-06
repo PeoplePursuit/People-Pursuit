@@ -898,7 +898,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-hero {
-  padding: 55px 0 70px;
+  padding: 44px 0 52px;
   text-align: center;
 }
 
@@ -907,7 +907,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   width: 84px;
   height: 84px;
   place-items: center;
-  margin: 0 auto 34px;
+  margin: 0 auto 26px;
   border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 25px;
   background: linear-gradient(#fff, #e9eaf2);
@@ -946,7 +946,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 
 .home-hero h1 {
   max-width: 1100px;
-  margin: 23px auto 25px;
+  margin: 18px auto 20px;
   color: #fff;
   font-family: "DM Sans", sans-serif;
   font-size: clamp(45px, 5.65vw, 78px);
@@ -973,7 +973,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 31px;
+  margin-top: 24px;
 }
 
 .home-button {
@@ -1016,11 +1016,11 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-expertise {
-  margin-top: 58px;
+  margin-top: 42px;
 }
 
 .home-expertise > p {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   color: #c7cce4;
   font-size: 13px;
 }
@@ -1050,7 +1050,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-section {
-  padding: 82px 0;
+  padding: 64px 0;
 }
 
 .home-section-eyebrow {
@@ -1061,8 +1061,8 @@ body > header.header.header-6 .nav-btn.home-btn {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 36px;
-  margin: 20px 0 34px;
+  gap: 28px;
+  margin: 14px 0 26px;
 }
 
 .home-section-heading h2,
@@ -1089,10 +1089,10 @@ body > header.header.header-6 .nav-btn.home-btn {
 
 .home-service-card {
   display: flex;
-  min-height: 290px;
+  min-height: 260px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 25px;
+  padding: 22px;
   border: 1px solid var(--pp-line);
   border-radius: 12px;
   background: #fff;
@@ -1110,7 +1110,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   width: 44px;
   height: 44px;
   place-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   border-radius: 50%;
   color: #626cad;
   background: var(--pp-accent-soft);
@@ -1150,7 +1150,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   justify-content: space-between;
   gap: 8px;
   margin-top: auto;
-  padding-top: 19px;
+  padding-top: 14px;
   border-top: 1px solid var(--pp-line);
   color: #505b99;
   font-size: 12px;
@@ -1162,7 +1162,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-about-section {
-  padding: 78px 0;
+  padding: 62px 0;
   background:
     radial-gradient(ellipse at 100% 15%, #e0e3f7 0, transparent 45%),
     var(--pp-panel);
@@ -1171,7 +1171,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 .home-about-grid {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 80px;
+  gap: 56px;
 }
 
 .home-about-grid h2 {
@@ -1179,16 +1179,16 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-about-copy > p {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   font-size: 14px;
 }
 
 .home-principles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 26px 0;
-  padding-top: 20px;
+  gap: 14px;
+  margin: 20px 0;
+  padding-top: 16px;
   border-top: 1px solid #d4d8e7;
 }
 
@@ -1220,8 +1220,8 @@ body > header.header.header-6 .nav-btn.home-btn {
 .home-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 38px;
-  margin-top: 40px;
+  gap: 30px;
+  margin-top: 28px;
 }
 
 .home-steps article {
@@ -1229,8 +1229,8 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-step-number {
-  margin-bottom: 20px;
-  padding-bottom: 16px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--pp-line);
   color: #747eb0 !important;
   font: 500 13px "Manrope", sans-serif;
@@ -1246,7 +1246,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-products-section {
-  padding: 82px 0;
+  padding: 64px 0;
   background: #f1f2fa;
 }
 
@@ -1261,8 +1261,8 @@ body > header.header.header-6 .nav-btn.home-btn {
 .home-product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-  margin: 34px 0 24px;
+  gap: 14px;
+  margin: 26px 0 18px;
 }
 
 .home-product-card {
@@ -1280,8 +1280,8 @@ body > header.header.header-6 .nav-btn.home-btn {
 
 .home-product-card > img {
   width: 100%;
-  height: 150px;
-  margin-bottom: 16px;
+  height: 132px;
+  margin-bottom: 12px;
   border-radius: 8px;
   background: #f4f5fb;
   object-fit: cover;
@@ -1310,22 +1310,22 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-opportunities-section {
-  padding: 74px 0;
+  padding: 58px 0;
 }
 
 .home-opportunities {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 55px;
-  padding: 48px;
+  gap: 40px;
+  padding: 36px;
   border: 1px solid var(--pp-line);
   border-radius: 16px;
   background: #fff;
 }
 
 .home-opportunities h2 {
-  margin: 17px 0;
+  margin: 12px 0;
 }
 
 .home-opportunities > div:first-child > p:last-child {
@@ -1339,7 +1339,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   min-width: 205px;
   flex-direction: column;
   align-items: stretch;
-  gap: 11px;
+  gap: 8px;
 }
 
 .home-button-dark {
@@ -1365,7 +1365,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-contact-section {
-  padding: 82px 0;
+  padding: 64px 0;
   color: #fff;
   background:
     radial-gradient(ellipse at 100% 10%, #555e91 0, transparent 50%),
@@ -1375,7 +1375,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 .home-contact-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 70px;
+  gap: 52px;
   align-items: start;
 }
 
@@ -1384,7 +1384,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-contact-grid h2 {
-  margin: 18px 0;
+  margin: 14px 0;
   color: #fff;
 }
 
@@ -1397,7 +1397,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 .home-contact-email {
   display: inline-flex;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -1428,7 +1428,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-contact-card {
-  padding: 30px;
+  padding: 26px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 13px;
   color: var(--pp-ink);
@@ -1447,8 +1447,8 @@ body > header.header.header-6 .nav-btn.home-btn {
 .home-contact-card textarea {
   display: block;
   width: 100%;
-  margin: 0 0 17px;
-  padding: 12px;
+  margin: 0 0 13px;
+  padding: 10px 12px;
   border: 1px solid #d7d9e6;
   border-radius: 7px;
   color: var(--pp-ink);
@@ -1497,15 +1497,15 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-footer {
-  padding: 40px 0 20px;
+  padding: 32px 0 18px;
   background: var(--pp-paper);
 }
 
 .home-footer-main {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
-  padding-bottom: 30px;
+  gap: 32px;
+  padding-bottom: 24px;
 }
 
 .footer-site-logo img {
@@ -1520,7 +1520,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 
 .home-footer-links {
   display: flex;
-  gap: 72px;
+  gap: 52px;
 }
 
 .home-footer-links > div {
@@ -1604,7 +1604,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 
   .home-about-grid,
   .home-contact-grid {
-    gap: 42px;
+    gap: 32px;
   }
 }
 
@@ -1631,13 +1631,13 @@ body > header.header.header-6 .nav-btn.home-btn {
   }
 
   .home-hero {
-    padding: 44px 0 53px;
+    padding: 36px 0 42px;
   }
 
   .home-brand-tile {
     width: 70px;
     height: 70px;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
     border-radius: 21px;
   }
 
@@ -1658,7 +1658,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   }
 
   .home-expertise {
-    margin-top: 44px;
+    margin-top: 34px;
   }
 
   .home-expertise > div {
@@ -1677,7 +1677,7 @@ body > header.header.header-6 .nav-btn.home-btn {
   .home-section,
   .home-products-section,
   .home-contact-section {
-    padding: 58px 0;
+    padding: 44px 0;
   }
 
   .home-section-heading {
@@ -1685,22 +1685,22 @@ body > header.header.header-6 .nav-btn.home-btn {
   }
 
   .home-section-heading > p {
-    margin-top: 16px;
+    margin-top: 12px;
   }
 
   .home-about-section {
-    padding: 58px 0;
+    padding: 44px 0;
   }
 
   .home-about-grid,
   .home-contact-grid {
     grid-template-columns: 1fr;
-    gap: 27px;
+    gap: 22px;
   }
 
   .home-steps {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 18px;
   }
 
   .home-step-number {
@@ -1709,15 +1709,15 @@ body > header.header.header-6 .nav-btn.home-btn {
 
   .home-opportunities {
     display: block;
-    padding: 30px;
+    padding: 24px;
   }
 
   .home-opportunity-actions {
-    margin-top: 25px;
+    margin-top: 18px;
   }
 
   .home-contact-card {
-    padding: 24px;
+    padding: 20px;
   }
 
   .home-footer-main {
