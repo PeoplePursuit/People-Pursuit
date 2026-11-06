@@ -12,13 +12,28 @@
     <script src="assets/js/whatsapp-chat.js?v=2" defer></script>
   </head>
   <body class="home-page">
-    <div class="home-hero-shell" id="home">
-      <header class="site-header">
-        <div class="home-wrap site-nav">
-          <a class="site-logo" href="index.html#home" aria-label="People Pursuit home">
-            <img src="assets/img/logo/people-pursuit-new.png" alt="People Pursuit" />
-          </a>
-          <nav class="desktop-nav" aria-label="Main navigation">
+    <header class="site-header">
+      <div class="home-wrap site-nav">
+        <a class="site-logo" href="index.html#home" aria-label="People Pursuit home">
+          <img src="assets/img/logo/people-pursuit-new.png" alt="People Pursuit" />
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#feature">Services</a>
+          <a href="#products">Products</a>
+          <details class="careers-dropdown">
+            <summary>Careers <span aria-hidden="true">⌄</span></summary>
+            <div class="careers-menu">
+              <a href="jobs.html">Find a job</a>
+              <a href="post-job.html">Post a job</a>
+            </div>
+          </details>
+          <a href="testimonials.html">Testimonials</a>
+          <a class="home-nav-cta" href="#contact">Contact us <span aria-hidden="true">↗</span></a>
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Open navigation menu">Menu</summary>
+          <nav aria-label="Mobile navigation">
             <a href="#about">About</a>
             <a href="#feature">Services</a>
             <a href="#products">Products</a>
@@ -30,28 +45,12 @@
               </div>
             </details>
             <a href="testimonials.html">Testimonials</a>
-            <a class="home-nav-cta" href="#contact">Contact us <span aria-hidden="true">↗</span></a>
+            <a href="#contact">Contact us</a>
           </nav>
-          <details class="mobile-nav">
-            <summary aria-label="Open navigation menu">Menu</summary>
-            <nav aria-label="Mobile navigation">
-              <a href="#about">About</a>
-              <a href="#feature">Services</a>
-              <a href="#products">Products</a>
-              <details class="careers-dropdown">
-                <summary>Careers <span aria-hidden="true">⌄</span></summary>
-                <div class="careers-menu">
-                  <a href="jobs.html">Find a job</a>
-                  <a href="post-job.html">Post a job</a>
-                </div>
-              </details>
-              <a href="testimonials.html">Testimonials</a>
-              <a href="#contact">Contact us</a>
-            </nav>
-          </details>
-        </div>
-      </header>
-
+        </details>
+      </div>
+    </header>
+    <div class="home-hero-shell" id="home">
       <div>
         <section class="home-hero" aria-labelledby="home-title">
           <div class="home-wrap">

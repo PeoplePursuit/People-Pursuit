@@ -315,6 +315,52 @@ body > header.header .navbar-nav a:hover {
   box-shadow: 0 0 0 3px #6976c833;
 }
 
+.jobs-header .dropdown-menu {
+  min-width: 10rem;
+  padding: 0.45rem;
+  border: 1px solid var(--pp-line);
+  border-radius: 0.75rem;
+  background: var(--pp-paper);
+  box-shadow: 0 12px 30px rgba(36, 40, 63, 0.12);
+}
+
+.jobs-header .dropdown-item {
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.45rem;
+  color: var(--pp-ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.jobs-header .dropdown-item:hover,
+.jobs-header .dropdown-item:focus {
+  color: var(--pp-accent);
+  background: var(--pp-panel);
+}
+
+.header.header-6 .dropdown-menu {
+  min-width: 10rem;
+  padding: 0.45rem;
+  border: 1px solid var(--pp-line);
+  border-radius: 0.75rem;
+  background: var(--pp-paper);
+  box-shadow: 0 12px 30px rgba(36, 40, 63, 0.12);
+}
+
+.header.header-6 .dropdown-item {
+  padding: 0.55rem 0.7rem !important;
+  border-radius: 0.45rem;
+  color: var(--pp-ink) !important;
+  font-size: 13px !important;
+  font-weight: 600;
+}
+
+.header.header-6 .dropdown-item:hover,
+.header.header-6 .dropdown-item:focus {
+  color: var(--pp-accent) !important;
+  background: var(--pp-panel);
+}
+
 .jobs-header .navbar-toggler .toggler-icon {
   display: block;
   width: 23px;
@@ -702,7 +748,7 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .home-page {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .home-wrap {
@@ -734,15 +780,17 @@ body > header.header.header-6 .nav-btn.home-btn {
 }
 
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 3;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-  background: transparent;
+  border-bottom: 1px solid var(--pp-line);
+  background: rgba(251, 251, 254, 0.96);
+  backdrop-filter: blur(14px);
 }
 
 .site-nav {
   display: flex;
-  min-height: 100px;
+  min-height: 88px;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
@@ -1593,6 +1641,14 @@ body > header.header.header-6 .nav-btn.home-btn {
     font-size: 12px;
   }
 
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
   .site-logo img {
     width: 165px;
   }
@@ -1614,20 +1670,12 @@ body > header.header.header-6 .nav-btn.home-btn {
   }
 
   .site-nav {
-    min-height: 82px;
+    min-height: 76px;
   }
 
   .site-logo img {
     width: 158px;
     height: auto;
-  }
-
-  .desktop-nav {
-    display: none;
-  }
-
-  .mobile-nav {
-    display: block;
   }
 
   .home-hero {
